@@ -5,7 +5,7 @@ import WordToGuess from './WordToGuess.js';
 function App() {
   return (
     <div className="App">
-      <p id = 'wordToGuess'></p>
+      <p id = "wordToGuess"></p>
       <WordToGuess></WordToGuess>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import './WordToGuess.css';
 
 function WordToGuess(){
 
@@ -19,6 +20,7 @@ function WordToGuess(){
 
         let indexOfRandomWord = Math.floor(Math.random() * setOfWords.length);
         let wordToGuess = '';
+        let i;
 
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
@@ -30,7 +32,12 @@ function WordToGuess(){
 
         }
 
-        elementToSetItsInnertext.innerText = wordToGuess;
+        elementToSetItsInnertext.innerText = '';
+
+        for(i = 0; i < wordToGuess.length; i++) {
+            elementToSetItsInnertext.innerText += '_______\u00A0\u00A0\u00A0';
+        }
+
     }
 
     return <button type="button" onClick={returnAWordToGuess}>I want a word!</button>
