@@ -1,6 +1,6 @@
 import './App.css';
-import './WordToGuess.js';
-import WordToGuess from './WordToGuess.js';
+import './components/WordToGuess.js';
+import WordToGuess from './components/WordToGuess.js';
 
 function App() {
   return (

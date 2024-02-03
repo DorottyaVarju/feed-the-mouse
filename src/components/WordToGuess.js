@@ -1,5 +1,5 @@
 import React from "react";
-import './WordToGuess.css';
+import '../css/WordToGuess.css';
 
 function WordToGuess(){
 
