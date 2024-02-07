@@ -6,15 +6,15 @@ function WordToGuess(){
     function returnAWordToGuess() {
 
         const setOfWords = [
-            'apple',
-            'pear',
-            'orange', 
-            'bread', 
-            'table', 
-            'computer', 
-            'mouse',
-            'bed',
-            'flower'
+            'APPLE',
+         /*   'PEAR',
+            'ORANGE', 
+            'BREAD', 
+            'TABLE', 
+            'COMPUTER', 
+            'MOUSE',
+            'BED',
+            'FLOWER' */
         ];
         const elementToSetItsInnertext = document.getElementById('wordToGuess');
 
