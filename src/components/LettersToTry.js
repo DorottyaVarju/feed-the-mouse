@@ -1,12 +1,12 @@
 import React from "react";
 import '../css/LettersToTry.css';
 
-function LettersToTry(){
+function LettersToTry(props){
 
     const abc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-    let word = 'APPLE';
-    let i, j;
+//    let word = 'APPLE';
+    let word = props.word;
     let elementsToReturn = [];
 
 
@@ -16,9 +16,15 @@ function LettersToTry(){
     
     
     function isThisLetterInTheWord(letterOfAbc){
-        (Array.from(word)).forEach(letterOfWord=>{
+        (Array.from(word)).forEach((letterOfWord, indexOfWord)=>{
             if(letterOfWord === letterOfAbc){
-                console.log(letterOfAbc);
+                let letterAboveLine = document.getElementsByClassName('letterAboveLine');
+//                console.log(letterAboveLine);
+                (Array.from(letterAboveLine)).forEach((line, indexOfLine)=>{
+                    if(indexOfLine === indexOfWord){
+                        line.innerText = letterOfWord;
+                    }
+                });
             }
         });
     }

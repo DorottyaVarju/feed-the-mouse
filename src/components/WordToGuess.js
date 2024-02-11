@@ -1,46 +1,62 @@
+import { useState } from "react";
 import React from "react";
 import '../css/WordToGuess.css';
+import LettersToTry from './LettersToTry.js';
 
 function WordToGuess(){
 
+    const [linesForWordToGuess, setLinesForWordToGuess] = useState([]);
+    const [word, setWord] = useState([]);
+    const setOfWords = [
+        'APPLE',
+        'PEAR',
+        'ORANGE', 
+        'BREAD', 
+        'TABLE', 
+        'COMPUTER', 
+        'MOUSE',
+        'BED',
+        'FLOWER'
+    ];
+
     function returnAWordToGuess() {
 
-        const setOfWords = [
-            'APPLE',
-         /*   'PEAR',
-            'ORANGE', 
-            'BREAD', 
-            'TABLE', 
-            'COMPUTER', 
-            'MOUSE',
-            'BED',
-            'FLOWER' */
-        ];
-        const elementToSetItsInnertext = document.getElementById('wordToGuess');
-
         let indexOfRandomWord = Math.floor(Math.random() * setOfWords.length);
-        let wordToGuess = '';
-        let i;
 
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
         function searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord(item, index){
 
             if(index === indexOfRandomWord){
-                    wordToGuess = item;
+                    let word = item;
+                    let linesForWordToGuess = [];
+
+                    (Array.from(item)).forEach((letterOfWordToGuess, indexOfLetterOfWordToGuess)=>{
+                        linesForWordToGuess.push(<span key={"letterAndLineContainer"+indexOfLetterOfWordToGuess} className="letterAndLineContainer"><span key={"letterAboveLine"+indexOfLetterOfWordToGuess} className="letterAboveLine"></span><span key={indexOfLetterOfWordToGuess} className="lineForWordToGuess">&nbsp;_______&nbsp;</span></span>);
+                    });
+                    setLinesForWordToGuess(linesForWordToGuess);
+                    setWord(word);
             } 
 
         }
 
-        elementToSetItsInnertext.innerText = '';
-
-        for(i = 0; i < wordToGuess.length; i++) {
-            elementToSetItsInnertext.innerText += '_______\u00A0\u00A0\u00A0';
+        const elements = document.getElementsByClassName('letterAboveLine');
+            for (let i = 0; i < elements.length; i++) {
+            elements[i].innerText = '';
         }
 
+        return [linesForWordToGuess, word];
     }
 
-    return <button type="button" onClick={returnAWordToGuess}>I want a word!</button>
+    return(
+        <div>
+            {linesForWordToGuess}
+            <br></br>
+            <br></br>
+            <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want a word!</button>
+            <LettersToTry word={word}></LettersToTry>
+        </div>
+    )
 
 }
 

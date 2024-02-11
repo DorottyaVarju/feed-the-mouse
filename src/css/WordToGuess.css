@@ -13,3 +13,25 @@ button:hover {
     background-color: white;
     color: #03490c;
 }
+
+.lineForWordToGuess {
+    min-width: 20px;
+    font-size: 20px;
+    color: white;
+    margin-top: -20px;
+}
+
+.letterAboveLine {
+    font-size: 40px;
+    color: white;
+}
+
+#btnIWantAWord {
+    min-width: 190px;
+    min-height: 48px;
+}
+
+.letterAndLineContainer{
+    display: inline-flex;
+    flex-direction: column;
+}

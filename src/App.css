@@ -5,10 +5,3 @@ body{
 .App {
   text-align: center;
 }
-
-#wordToGuess {
-  min-width: 20px;
-  min-height: 26.4px;
-  font-size: 20px;
-  color: white;
-}
