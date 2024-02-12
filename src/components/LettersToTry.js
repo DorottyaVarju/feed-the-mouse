@@ -13,8 +13,7 @@ function LettersToTry(props){
     abc.forEach((item, index)=>{
         elementsToReturn.push(<button type="button" className="letters" key={index} onClick={() => isThisLetterInTheWord(item)}>{item}</button>);
     })
-    
-    
+    let numOfLettersInTheWord = 0;
     function isThisLetterInTheWord(letterOfAbc){
         (Array.from(word)).forEach((letterOfWord, indexOfWord)=>{
             if(letterOfWord === letterOfAbc){
@@ -22,9 +21,14 @@ function LettersToTry(props){
 //                console.log(letterAboveLine);
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine)=>{
                     if(indexOfLine === indexOfWord){
+                        numOfLettersInTheWord++;
                         line.innerText = letterOfWord;
                     }
                 });
+//                console.log(numOfLettersInTheWord);
+                if(numOfLettersInTheWord === word.length){
+                    document.getElementById('checkmark').style.opacity = 1;
+                }
             }
         });
     }

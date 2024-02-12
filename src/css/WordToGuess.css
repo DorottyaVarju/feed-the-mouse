@@ -35,3 +35,9 @@ button:hover {
     display: inline-flex;
     flex-direction: column;
 }
+
+#checkmark{
+    width: 25px;
+    opacity: 0;
+    display: inline-flex;
+}

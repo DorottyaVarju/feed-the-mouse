@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import '../css/WordToGuess.css';
 import LettersToTry from './LettersToTry.js';
+import checkmark from'../images/checkmark.png';
 
 function WordToGuess(){
 
@@ -45,12 +46,15 @@ function WordToGuess(){
             elements[i].innerText = '';
         }
 
+        document.getElementById('checkmark').style.opacity = 0;
+
         return [linesForWordToGuess, word];
     }
 
     return(
         <div>
             {linesForWordToGuess}
+            <img src={checkmark} alt="checkmark" id="checkmark"></img>
             <br></br>
             <br></br>
             <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want a word!</button>
