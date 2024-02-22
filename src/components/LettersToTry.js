@@ -52,8 +52,6 @@ function LettersToTry(props) {
             onWrongLetter();
             letterOfAbcElement.classList.add('wrongLetterGuess');
         }
-
-        letterOfAbcElement.removeEventListener('click',isThisLetterInTheWord);
     }
 
     return <div id="elementsToReturn">{elementsToReturn}</div>;
