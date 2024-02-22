@@ -2,12 +2,16 @@ import { useState } from "react";
 import React from "react";
 import '../css/WordToGuess.css';
 import LettersToTry from './LettersToTry.js';
+import HangmanDisplay from './HangmanDisplay.js';
 import checkmark from'../images/checkmark.png';
 
 function WordToGuess(){
 
     const [linesForWordToGuess, setLinesForWordToGuess] = useState([]);
     const [word, setWord] = useState([]);
+    const [wrongGuess, setWrongGuess] = useState(0);
+    const [wordSelected, setWordSelected] = useState(false);
+
     const setOfWords = [
         'APPLE',
         'PEAR',
@@ -37,6 +41,8 @@ function WordToGuess(){
                     });
                     setLinesForWordToGuess(linesForWordToGuess);
                     setWord(word);
+                    setWrongGuess(0);
+                    setWordSelected(true);
             } 
 
         }
@@ -62,9 +68,11 @@ function WordToGuess(){
             {linesForWordToGuess}
             <img src={checkmark} alt="checkmark" id="checkmark"></img>
             <br></br>
+            {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
+            <br></br>
             <br></br>
             <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want a word!</button>
-            <LettersToTry word={word}></LettersToTry>
+            <LettersToTry word={word} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
         </div>
     )
 
