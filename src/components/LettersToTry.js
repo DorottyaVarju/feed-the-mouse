@@ -7,6 +7,7 @@ function LettersToTry(props){
 
 //    let word = 'APPLE';
     let word = props.word;
+    let onWrongLetter = props.onWrongLetter;
     let elementsToReturn = [];
 
 
@@ -16,10 +17,10 @@ function LettersToTry(props){
 
     let numOfLettersInTheWord = 0;
     function isThisLetterInTheWord(letterOfAbc){
-        let letterOfAbcElement = document.getElementById(letterOfAbc);
-        let numOfLettersInTheWordThatAreNotSameAsGuess = 0;
+        let letterFound = false;
         (Array.from(word)).forEach((letterOfWord, indexOfWord)=>{
             if(letterOfWord === letterOfAbc){
+                letterFound = true;
                 let letterAboveLine = document.getElementsByClassName('letterAboveLine');
 //                console.log(letterAboveLine);
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine)=>{
@@ -30,6 +31,7 @@ function LettersToTry(props){
                     }
                 });
 //                console.log(numOfLettersInTheWord);
+
                 if(numOfLettersInTheWord === word.length){
                     document.getElementById('checkmark').style.opacity = 1;
                 }
@@ -40,9 +42,10 @@ function LettersToTry(props){
             }
         });
 
-        if(numOfLettersInTheWordThatAreNotSameAsGuess === word.length) {
-            letterOfAbcElement.classList.add('wrongLetterGuess');
+        if (!letterFound && onWrongLetter) {
+            onWrongLetter();
         }
+
     }
 
     return <div id="elementsToReturn">{elementsToReturn}</div>;
