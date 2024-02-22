@@ -24,7 +24,7 @@ function LettersToTry(props) {
         (Array.from(word)).forEach((letterOfWord, indexOfWord) => {
             if (letterOfWord === letterOfAbc) {
                 letterFound = true;
-                //console.log(letterAboveLine);
+                console.log(letterAboveLine);
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
                     if (indexOfLine === indexOfWord) {
                         line.innerText = letterOfWord;
