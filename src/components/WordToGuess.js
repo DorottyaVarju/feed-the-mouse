@@ -54,7 +54,7 @@ function WordToGuess(){
 
         document.getElementById('checkmark').style.opacity = 0;
 
-        let lettersOfAbcFromThePreviousWord = document.getElementsByClassName('alreadyInWordLetter');
+        let lettersOfAbcFromThePreviousWord = document.getElementsByClassName('letters');
         (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord)=>{
             letterFromPreviousWord.classList.remove('alreadyInWordLetter');
             letterFromPreviousWord.classList.remove('wrongLetterGuess');
