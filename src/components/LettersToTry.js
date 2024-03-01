@@ -12,11 +12,11 @@ function LettersToTry(props) {
 
 
     abc.forEach((item, index) => {
-        elementsToReturn.push(<button type="button" id={item} className="letters" key={index} onClick={() => isThisLetterInTheWord(item)}>{item}</button>);
+        const handleClick = () => isThisLetterInTheWord(item);
+        elementsToReturn.push(<button type="button" id={item} className="letters" key={index} onClick={handleClick}>{item}</button>);
     })
 
     let letterAboveLine = document.getElementsByClassName('letterAboveLine');
-    let numOfLettersInTheWord = 0;
     
     function isThisLetterInTheWord(letterOfAbc) {
         let letterFound = false;
@@ -24,23 +24,19 @@ function LettersToTry(props) {
         (Array.from(word)).forEach((letterOfWord, indexOfWord) => {
             if (letterOfWord === letterOfAbc) {
                 letterFound = true;
-                console.log(letterAboveLine);
+//                console.log(letterAboveLine);
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
                     if (indexOfLine === indexOfWord) {
                         line.innerText = letterOfWord;
+
                         if (!(letterOfAbcElement.classList.contains('alreadyInWordLetter'))) {
                             letterOfAbcElement.classList.add('alreadyInWordLetter');
                         }
                     }
 
-                    if (line.innerText !== '') {
-                        numOfLettersInTheWord++;
-                    }
-
                 });
-                console.log(numOfLettersInTheWord);
 
-                if (numOfLettersInTheWord === word.length) {
+                if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {
                     document.getElementById('checkmark').style.opacity = 1;
                 }
 
