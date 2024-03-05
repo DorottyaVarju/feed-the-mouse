@@ -1,0 +1,39 @@
+form {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 100px auto;
+    text-align: center;
+}
+
+button {
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 4px solid white;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: white;
+    color: #03490c;
+}
+
+select {
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 4px solid white;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+}
+
+select option {
+    background-color: #03490c;
+}
