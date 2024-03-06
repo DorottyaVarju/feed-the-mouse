@@ -63,10 +63,15 @@ function WordToGuess(){
         return [linesForWordToGuess, word];
     }
 
+    const backToMainPage = () => {
+        window.location.href = '/';
+    };
+
     return(
         <div>
             {linesForWordToGuess}
             <img src={checkmark} alt="checkmark" id="checkmark"></img>
+            <button id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
             <br></br>
             {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
             <br></br>

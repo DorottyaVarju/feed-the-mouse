@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/CategoryAndNumOfLettersToChoose.css';
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CategoryAndNumOfLettersToChoose() {
     
