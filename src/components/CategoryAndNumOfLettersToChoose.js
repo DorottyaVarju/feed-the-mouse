@@ -17,7 +17,7 @@ function CategoryAndNumOfLettersToChoose() {
     const handleSubmit = (event) => {
     event.preventDefault();
 //    alert(JSON.stringify(inputs));
-    navigate('/game');
+        navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
     }
 
     return (
@@ -25,18 +25,20 @@ function CategoryAndNumOfLettersToChoose() {
             <label>Choose a category:</label>
             <br></br>
             <select name="category" value={inputs.category || ""} onChange={handleChange}>
-                <option value="Nature">Nature</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Society">Society</option>
+                <option value="" disabled>Select a category</option>
+                <option value="nature">Nature</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="society">Society</option>
             </select>
             <br></br>
             <br></br>
             <label>Choose the level:</label>
             <br></br>
             <select name="level" value={inputs.level || ""} onChange={handleChange}>
-                <option value="Easy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
+                <option value="" disabled>Select a level</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
             </select>
             <br></br>
             <br></br>

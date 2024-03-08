@@ -12,17 +12,71 @@ function WordToGuess(){
     const [wrongGuess, setWrongGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
 
-    const setOfWords = [
-        'APPLE',
-        'PEAR',
-        'ORANGE', 
-        'BREAD', 
-        'TABLE', 
-        'COMPUTER', 
-        'MOUSE',
-        'BED',
-        'FLOWER'
-    ];
+const queryParameters = new URLSearchParams(window.location.search)
+  const category = queryParameters.get("category")
+  const level = queryParameters.get("level")
+    let setOfWords;
+
+    console.log(category);
+    if(category === 'nature'){
+        if(level === 'easy'){ //3-5 letters
+            setOfWords = [
+                'PEAR',
+                'TREE',
+                'FLY',
+                'BIRD',
+                'GRASS',
+                'LION',
+                'RAIN'
+            ]
+        } else if(level === 'medium'){ //6-8 letters
+            setOfWords = [
+                'ANTELOPE',
+                'DESERT'
+            ]
+        } else {
+            setOfWords = [ // >8 letters
+                'BUTTERFLY',
+                'HIGHLANDS'
+            ]
+        }
+    } else if(category === 'entertainment'){
+        if(level === 'easy'){
+            setOfWords = [
+                'FILM',
+                'BOOK',
+                'ACTOR',
+                'FUN'
+            ]
+        } else if(level === 'medium'){
+            setOfWords = [
+                'CINEMA',
+                'THEATRE'
+            ]
+        } else {
+            setOfWords = [
+                'NIGHTCLUB'
+            ]
+        }
+    } else {
+        if(level === 'easy'){
+            setOfWords = [
+                'JOB',
+                'FLAT'
+            ]
+        } else if(level === 'medium'){
+            setOfWords = [
+                'PEOPLE',
+                'FRIEND',
+                'COMPANY'
+            ]
+        } else {
+            setOfWords = [
+                'SCIENTIST',
+                'CIVILIZATION'
+            ]
+        }
+    }
 
     function returnAWordToGuess() {
 
