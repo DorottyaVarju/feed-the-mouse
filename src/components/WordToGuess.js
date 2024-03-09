@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import '../css/WordToGuess.css';
 import LettersToTry from './LettersToTry.js';
@@ -12,12 +12,12 @@ function WordToGuess(){
     const [wrongGuess, setWrongGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
 
-const queryParameters = new URLSearchParams(window.location.search)
-  const category = queryParameters.get("category")
-  const level = queryParameters.get("level")
+    const queryParameters = new URLSearchParams(window.location.search)
+    const category = queryParameters.get("category")
+    const level = queryParameters.get("level")
     let setOfWords;
 
-    console.log(category);
+//    console.log(category);
     if(category === 'nature'){
         if(level === 'easy'){ //3-5 letters
             setOfWords = [
@@ -121,16 +121,20 @@ const queryParameters = new URLSearchParams(window.location.search)
         window.location.href = '/';
     };
 
+    useEffect(() => {
+        returnAWordToGuess();
+    }, []);
+
     return(
         <div>
             {linesForWordToGuess}
             <img src={checkmark} alt="checkmark" id="checkmark"></img>
-            <button id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
             <br></br>
             {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
             <br></br>
             <br></br>
-            <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want a word!</button>
+            <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want another word!</button>
+            <button id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
             <LettersToTry word={word} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
         </div>
     )

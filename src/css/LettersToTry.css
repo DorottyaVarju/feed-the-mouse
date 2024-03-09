@@ -3,8 +3,10 @@
 }
 
 #elementsToReturn{
-    margin: 50px auto;
+    margin: 50px 10%;
     width: 80%;
+    position: absolute;
+    bottom: 0;
 }
 
 .alreadyInWordLetter {

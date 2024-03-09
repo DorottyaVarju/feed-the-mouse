@@ -17,7 +17,9 @@ function CategoryAndNumOfLettersToChoose() {
     const handleSubmit = (event) => {
     event.preventDefault();
 //    alert(JSON.stringify(inputs));
-        navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
+        if(inputs.category !== undefined && inputs.level !== undefined) {
+            navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
+        }
     }
 
     return (

@@ -38,6 +38,25 @@ function LettersToTry(props) {
 
                 if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {
                     document.getElementById('checkmark').style.opacity = 1;
+                } else {
+                    const indexes = [];
+                    (Array.from(document.querySelectorAll('.alreadyInWordLetter'))).forEach((charElement) => {
+                        const char = charElement.textContent;
+                        let index = -1;
+                        
+                        do {
+                          index = word.indexOf(char, index + 1);
+                          if (index !== -1) {
+                            indexes.push(index);
+                          }
+                        } while (index !== -1);
+
+//                        console.log(indexes);
+                    }); 
+
+                    if(indexes.length === word.length){
+                        document.getElementById('checkmark').style.opacity = 1;
+                    }
                 }
 
             }
