@@ -7,7 +7,6 @@ function CategoryAndNumOfLettersToChoose() {
     
     const [inputs, setInputs] = useState({});
     const navigate = useNavigate();
-
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -19,6 +18,12 @@ function CategoryAndNumOfLettersToChoose() {
 //    alert(JSON.stringify(inputs));
         if(inputs.category !== undefined && inputs.level !== undefined) {
             navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
+        } else if(inputs.category === undefined && inputs.level !== undefined) {
+            document.getElementById('errorMsg').innerText = 'Please, choose a category!';
+        } else if(inputs.category !== undefined && inputs.level === undefined) {
+            document.getElementById('errorMsg').innerText = 'Please, choose a level!';
+        } else {
+           document.getElementById('errorMsg').innerText = 'Please, choose a category and a level!';
         }
     }
 
@@ -45,6 +50,7 @@ function CategoryAndNumOfLettersToChoose() {
             <br></br>
             <br></br>
             <button type="submit">Let's start!</button>
+            <p id="errorMsg"></p>
         </form>
     )
 

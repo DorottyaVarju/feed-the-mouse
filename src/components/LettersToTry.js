@@ -10,7 +10,6 @@ function LettersToTry(props) {
     let onWrongLetter = props.onWrongLetter;
     let elementsToReturn = [];
 
-
     abc.forEach((item, index) => {
         const handleClick = () => isThisLetterInTheWord(item);
         elementsToReturn.push(<button type="button" id={item} className="letters" key={index} onClick={handleClick}>{item}</button>);

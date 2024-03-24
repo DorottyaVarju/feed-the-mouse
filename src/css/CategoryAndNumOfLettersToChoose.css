@@ -37,3 +37,7 @@ select {
 select option {
     background-color: #03490c;
 }
+
+#errorMsg {
+    color: rgb(255, 0, 0);
+}

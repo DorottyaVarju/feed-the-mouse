@@ -17,7 +17,6 @@ function WordToGuess(){
     const level = queryParameters.get("level")
     let setOfWords;
 
-//    console.log(category);
     if(category === 'nature'){
         if(level === 'easy'){ //3-5 letters
             setOfWords = [
@@ -88,11 +87,14 @@ function WordToGuess(){
 
             if(index === indexOfRandomWord){
                     let word = item;
-                    let linesForWordToGuess = [];
 
-                    (Array.from(item)).forEach((letterOfWordToGuess, indexOfLetterOfWordToGuess)=>{
-                        linesForWordToGuess.push(<span key={"letterAndLineContainer"+indexOfLetterOfWordToGuess} className="letterAndLineContainer"><span key={"letterAboveLine"+indexOfLetterOfWordToGuess} className="letterAboveLine"></span><span key={indexOfLetterOfWordToGuess} className="lineForWordToGuess">&nbsp;_______&nbsp;</span></span>);
-                    });
+                    let linesForWordToGuess = Array.from(item).map((letterOfWordToGuess, indexOfLetterOfWordToGuess) =>
+                        <li key={"letterAndLineContainer"+indexOfLetterOfWordToGuess} className="letterAndLineContainer">
+                            <span key={"letterAboveLine"+indexOfLetterOfWordToGuess} className="letterAboveLine"></span>
+                            <span key={indexOfLetterOfWordToGuess} className="lineForWordToGuess">&nbsp;_______&nbsp;</span>
+                        </li>
+                    );
+
                     setLinesForWordToGuess(linesForWordToGuess);
                     setWord(word);
                     setWrongGuess(0);
@@ -120,21 +122,28 @@ function WordToGuess(){
     const backToMainPage = () => {
         window.location.href = '/';
     };
-
-    useEffect(() => {
+    
+    /*
+    useEffect(() => { 
         returnAWordToGuess();
-    }, []);
+    }, []); */
 
     return(
         <div>
-            {linesForWordToGuess}
-            <img src={checkmark} alt="checkmark" id="checkmark"></img>
-            <br></br>
-            {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
-            <br></br>
-            <br></br>
-            <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want another word!</button>
-            <button id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
+            <div id="gameDiv">
+                <ul>
+                    {linesForWordToGuess}
+                    <li><img src={checkmark} alt="checkmark" id="checkmark"></img></li>
+                </ul>
+                <br></br>
+                {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
+                <br></br>
+                <br></br>
+                <div id="buttonDiv">
+                    <button type="button" onClick={returnAWordToGuess} id="btnIWantAWord">I want another word!</button>
+                    <button type="button" id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
+                </div>
+            </div>
             <LettersToTry word={word} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
         </div>
     )

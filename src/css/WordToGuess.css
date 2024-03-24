@@ -1,3 +1,14 @@
+#gameDiv {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#buttonDiv {
+    align-self: center;
+}
+
 button {
     padding: 10px 30px;
     border-radius: 20px;
@@ -14,11 +25,21 @@ button:hover {
     color: #03490c;
 }
 
-.lineForWordToGuess {
-    min-width: 20px;
-    font-size: 20px;
-    color: white;
-    margin-top: -20px;
+ul {
+    display: inline-flex;
+    align-items: flex-end;
+    height: 70px;
+    align-self: center;
+    list-style: none;
+}
+
+canvas {
+    align-self: center;
+}
+
+.letterAndLineContainer{
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .letterAboveLine {
@@ -26,17 +47,19 @@ button:hover {
     color: white;
 }
 
+.lineForWordToGuess {
+    min-width: 20px;
+    font-size: 20px;
+    color: white;
+    margin-top: -20px;
+}
+
 #btnIWantAWord {
-    min-width: 190px;
-    min-height: 48px;
+    min-width: 120px;
+    min-height: 30px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 2px solid white;
-}
-
-.letterAndLineContainer{
-    display: inline-flex;
-    flex-direction: column;
 }
 
 #checkmark{
@@ -46,7 +69,62 @@ button:hover {
 }
 
 #backBtn {
+    min-width: 120px;
+    min-height: 30px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: 2px solid white;
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        padding: 8px 28px;
+        border-radius: 18px;
+        border: 3px solid white;
+        font-size: 16px;
+    }   
+
+    .letterAboveLine {
+        font-size: 33px;
+    }
+    
+    .lineForWordToGuess {
+        min-width: 16px;
+        font-size: 18px;
+        margin-top: -20px;
+    }
+    
+    #btnIWantAWord {
+        border-right: 1px solid white;
+    }
+    
+    #checkmark{
+        width: 22px;
+    }
+    
+    #backBtn {
+        border-left: 1px solid white;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+        padding: 6px 26px;
+        border-radius: 16px;
+        border: 2px solid white;
+        font-size: 11px;
+    }   
+
+    .letterAboveLine {
+        font-size: 25px;
+    }
+    
+    .lineForWordToGuess {
+        font-size: 14px;
+        margin-top: -20px;
+    }
+    
+    #checkmark{
+        width: 19px;
+    }
 }

@@ -1,23 +1,42 @@
 .letters{
     margin: 2px;
+    font-size: 1.2vw;
+    text-align: center;
+    min-width:20px;
+    min-height: 15px;
 }
 
 #elementsToReturn{
-    margin: 50px 10%;
-    width: 80%;
-    position: absolute;
-    bottom: 0;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 0px 5%;
 }
 
 .alreadyInWordLetter {
-    background-color: white;
-    color: #03490c;
-    cursor: auto;
-}
-
-.wrongLetterGuess {
-    background: transparent;
+    background-color: rgb(5, 216, 5);
     color: white;
     cursor: auto;
     pointer-events: none;
+}
+
+.wrongLetterGuess {
+    background: rgb(255, 0, 0);
+    color: white;
+    cursor: auto;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .letters{
+        font-size: 1.5vw;
+    }    
+}
+
+@media only screen and (max-width: 600px) {
+    .letters{
+        font-size: 3vw;
+    }    
 }
