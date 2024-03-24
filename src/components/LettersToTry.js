@@ -8,12 +8,16 @@ function LettersToTry(props) {
     //let word = 'APPLE';
     let word = props.word;
     let onWrongLetter = props.onWrongLetter;
-    let elementsToReturn = [];
 
-    abc.forEach((item, index) => {
+    const elementsToReturn = abc.map((item, index) => {
         const handleClick = () => isThisLetterInTheWord(item);
-        elementsToReturn.push(<button type="button" id={item} className="letters" key={index} onClick={handleClick}>{item}</button>);
-    })
+        return (
+          <button type="button" id={item} className="letters" key={index} onClick={handleClick}>
+            {item}
+          </button>
+        );
+      });
+      
 
     let letterAboveLine = document.getElementsByClassName('letterAboveLine');
     
