@@ -123,10 +123,9 @@ function WordToGuess(){
         window.location.href = '/';
     };
     
-    /*
     useEffect(() => { 
         returnAWordToGuess();
-    }, []); */
+    }, []);
 
     return(
         <div>
