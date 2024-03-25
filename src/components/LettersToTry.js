@@ -41,6 +41,10 @@ function LettersToTry(props) {
 
                 if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {
                     document.getElementById('checkmark').style.opacity = 1;
+                    Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
+                        letter.style.pointerEvents = 'none';
+                        letter.style.cursor = 'auto';
+                    });
                 } else {
                     const indexes = [];
                     (Array.from(document.querySelectorAll('.alreadyInWordLetter'))).forEach((charElement) => {
@@ -59,6 +63,10 @@ function LettersToTry(props) {
 
                     if(indexes.length === word.length){
                         document.getElementById('checkmark').style.opacity = 1;
+                        Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
+                            letter.style.pointerEvents = 'none';
+                            letter.style.cursor = 'auto';
+                        });
                     }
                 }
 
