@@ -29,6 +29,11 @@
     pointer-events: none;
 }
 
+.untriedLetter {
+    cursor: auto;
+    pointer-events: none;
+}
+
 @media only screen and (max-width: 768px) {
     .letters{
         font-size: 1.5vw;

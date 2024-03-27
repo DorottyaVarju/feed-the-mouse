@@ -114,6 +114,7 @@ function WordToGuess(){
         (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord)=>{
             letterFromPreviousWord.classList.remove('alreadyInWordLetter');
             letterFromPreviousWord.classList.remove('wrongLetterGuess');
+            letterFromPreviousWord.classList.remove('untriedLetter');
         });
 
         return [linesForWordToGuess, word];
