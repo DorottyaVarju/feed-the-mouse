@@ -4,6 +4,7 @@ import '../css/WordToGuess.css';
 import LettersToTry from './LettersToTry.js';
 import HangmanDisplay from './HangmanDisplay.js';
 import checkmark from'../images/checkmark.png';
+import xmark from'../images/xmark.png';
 
 function WordToGuess(){
 
@@ -108,7 +109,7 @@ function WordToGuess(){
             elements[i].innerText = '';
         }
 
-        document.getElementById('checkmark').style.opacity = 0;
+        document.getElementById('mark').style.opacity = 0;
 
         let lettersOfAbcFromThePreviousWord = document.getElementsByClassName('letters');
         (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord)=>{
@@ -133,7 +134,7 @@ function WordToGuess(){
             <div id="gameDiv">
                 <ul>
                     {linesForWordToGuess}
-                    <li><img src={checkmark} alt="checkmark" id="checkmark"></img></li>
+                    <li><img src={wrongGuess>=6 ? xmark :checkmark} alt="mark" id="mark"></img></li>
                 </ul>
                 <br></br>
                 {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
@@ -144,7 +145,7 @@ function WordToGuess(){
                     <button type="button" id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
                 </div>
             </div>
-            <LettersToTry word={word} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
+            <LettersToTry word={word} wrongGuess={wrongGuess} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
         </div>
     )
 

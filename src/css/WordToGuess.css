@@ -65,7 +65,7 @@ canvas {
     align-self: flex-end;
 }
 
-#checkmark{
+#mark{
     width: 25px;
     opacity: 0;
     display: inline-flex;

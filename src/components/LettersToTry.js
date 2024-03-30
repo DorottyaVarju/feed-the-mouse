@@ -7,6 +7,7 @@ function LettersToTry(props) {
 
     //let word = 'APPLE';
     let word = props.word;
+    let wrongGuess = props.wrongGuess;
     let onWrongLetter = props.onWrongLetter;
 
     const elementsToReturn = abc.map((item, index) => {
@@ -40,7 +41,7 @@ function LettersToTry(props) {
                 });
 
                 if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {
-                    document.getElementById('checkmark').style.opacity = 1;
+                    document.getElementById('mark').style.opacity = 1;
                     Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
                         letter.classList.add('untriedLetter');
                     });
@@ -61,7 +62,7 @@ function LettersToTry(props) {
                     }); 
 
                     if(indexes.length === word.length){
-                        document.getElementById('checkmark').style.opacity = 1;
+                        document.getElementById('mark').style.opacity = 1;
                         Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
                             letter.classList.add('untriedLetter');
                         });
@@ -75,6 +76,19 @@ function LettersToTry(props) {
         if (!letterFound && onWrongLetter) {
             onWrongLetter();
             letterOfAbcElement.classList.add('wrongLetterGuess');
+            if(wrongGuess>=6) {
+                document.getElementById('mark').style.opacity = 1;
+                Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
+                    letter.classList.add('untriedLetter');
+                });
+                (Array.from(word)).forEach((letterOfWord,indexOfWord) => {
+                    (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
+                        if (indexOfLine === indexOfWord) {
+                            line.innerText = letterOfWord;
+                        }
+                    });
+                });
+            }
         }
     }
 
