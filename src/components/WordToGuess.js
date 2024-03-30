@@ -124,8 +124,8 @@ function WordToGuess(){
     }
 
     const backToMainPage = () => {
-        window.location.href = '/';
-    //    window.location.href = '/hangman-game/';
+    // window.location.href = '/';
+       window.location.href = '/hangman-game/';
     };
     
     useEffect(() => { 
