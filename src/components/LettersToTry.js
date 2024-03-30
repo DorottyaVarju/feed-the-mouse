@@ -76,7 +76,7 @@ function LettersToTry(props) {
         if (!letterFound && onWrongLetter) {
             onWrongLetter();
             letterOfAbcElement.classList.add('wrongLetterGuess');
-            if(wrongGuess>=6) {
+            if(wrongGuess>6) {
                 document.getElementById('mark').style.opacity = 1;
                 Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
                     letter.classList.add('untriedLetter');

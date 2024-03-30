@@ -134,7 +134,7 @@ function WordToGuess(){
             <div id="gameDiv">
                 <ul>
                     {linesForWordToGuess}
-                    <li><img src={wrongGuess>=6 ? xmark :checkmark} alt="mark" id="mark"></img></li>
+                    <li><img src={wrongGuess>6 ? xmark :checkmark} alt="mark" id="mark"></img></li>
                 </ul>
                 <br></br>
                 {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
