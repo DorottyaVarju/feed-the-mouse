@@ -13,9 +13,11 @@ function WordToGuess(){
     const [wrongGuess, setWrongGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
 
-    const queryParameters = new URLSearchParams(window.location.search)
-    const category = queryParameters.get("category")
-    const level = queryParameters.get("level")
+    const fragment = decodeURIComponent(window.location.hash);
+    const params = fragment.split('?')[1].split('&').map(param => param.split('='));
+    const queryParams = Object.fromEntries(params);
+    const category = queryParams.category;
+    const level = queryParams.level;
     let setOfWords;
 
     if(category === 'nature'){
@@ -123,6 +125,7 @@ function WordToGuess(){
 
     const backToMainPage = () => {
         window.location.href = '/';
+    //    window.location.href = '/hangman-game/';
     };
     
     useEffect(() => { 
