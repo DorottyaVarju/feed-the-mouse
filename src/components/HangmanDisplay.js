@@ -10,14 +10,15 @@ function HangmanDisplay({wrongGuess}){
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
 
-        ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+        ctx.strokeStyle = 'rgba(227,227,227,1)';
         ctx.lineCap = 'round';
-        ctx.lineWidth = 6;
+        ctx.lineWidth = 5.5;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // gallows
         if (wrongGuess > 0) {
+            ctx.beginPath();
             ctx.moveTo(10, 130);
             ctx.lineTo(50, 130);
             ctx.moveTo(30, 130);

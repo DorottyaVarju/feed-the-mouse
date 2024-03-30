@@ -78,8 +78,9 @@ function WordToGuess(){
     }
 
     function returnAWordToGuess() {
-
         let indexOfRandomWord = Math.floor(Math.random() * setOfWords.length);
+
+        setWrongGuess(0);
 
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
@@ -97,7 +98,6 @@ function WordToGuess(){
 
                     setLinesForWordToGuess(linesForWordToGuess);
                     setWord(word);
-                    setWrongGuess(0);
                     setWordSelected(true);
             } 
 
