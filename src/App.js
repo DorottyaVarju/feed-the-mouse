@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <HashRouter>
         <Routes>
-          <Route exact path="/game" component={<WordToGuess/>} />
-          <Route exact path="/" component={<CategoryAndNumOfLettersToChoose/>} />
+          <Route path="/game" element={<WordToGuess />} />
+          <Route exact path="/" element={<CategoryAndNumOfLettersToChoose />} />
         </Routes>
       </HashRouter>
     </div>
