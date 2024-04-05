@@ -5,11 +5,11 @@ function LettersToTry(props) {
 
     const abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-    //let word = 'APPLE';
     let word = props.word;
     let wrongGuess = props.wrongGuess;
     let onWrongLetter = props.onWrongLetter;
-
+    let letterAboveLine = document.getElementsByClassName('letterAboveLine');
+    
     const elementsToReturn = abc.map((item, index) => {
         const handleClick = () => isThisLetterInTheWord(item);
         return (
@@ -17,10 +17,14 @@ function LettersToTry(props) {
             {item}
           </button>
         );
-      });
+    });
       
-
-    let letterAboveLine = document.getElementsByClassName('letterAboveLine');
+    const unTriedLetter = () => {
+        document.getElementById('mark').style.opacity = 1;
+        Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
+            letter.classList.add('untriedLetter');
+        });
+    }
     
     function isThisLetterInTheWord(letterOfAbc) {
         let letterFound = false;
@@ -28,7 +32,6 @@ function LettersToTry(props) {
         (Array.from(word)).forEach((letterOfWord, indexOfWord) => {
             if (letterOfWord === letterOfAbc) {
                 letterFound = true;
-//                console.log(letterAboveLine);
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
                     if (indexOfLine === indexOfWord) {
                         line.innerText = letterOfWord;
@@ -41,10 +44,7 @@ function LettersToTry(props) {
                 });
 
                 if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {
-                    document.getElementById('mark').style.opacity = 1;
-                    Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
-                        letter.classList.add('untriedLetter');
-                    });
+                    unTriedLetter();
                 } else {
                     const indexes = [];
                     (Array.from(document.querySelectorAll('.alreadyInWordLetter'))).forEach((charElement) => {
@@ -58,30 +58,22 @@ function LettersToTry(props) {
                           }
                         } while (index !== -1);
 
-//                        console.log(indexes);
                     }); 
 
                     if(indexes.length === word.length){
-                        document.getElementById('mark').style.opacity = 1;
-                        Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
-                            letter.classList.add('untriedLetter');
-                        });
+                        unTriedLetter();
                     }
                 }
 
             }
         });
 
-
         if (!letterFound && onWrongLetter) {
             onWrongLetter();
             letterOfAbcElement.classList.add('wrongLetterGuess');
             console.log(wrongGuess);
             if(wrongGuess>5) {
-                document.getElementById('mark').style.opacity = 1;
-                Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
-                    letter.classList.add('untriedLetter');
-                });
+                unTriedLetter();
                 (Array.from(word)).forEach((letterOfWord,indexOfWord) => {
                     (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
                         if (indexOfLine === indexOfWord) {

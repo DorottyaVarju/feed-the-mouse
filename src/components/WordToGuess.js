@@ -3,10 +3,11 @@ import React from "react";
 import '../css/WordToGuess.css';
 import LettersToTry from './LettersToTry.js';
 import HangmanDisplay from './HangmanDisplay.js';
-import checkmark from'../images/checkmark.png';
-import xmark from'../images/xmark.png';
+import checkmark from '../images/checkmark.png';
+import xmark from '../images/xmark.png';
+import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult } from '../Words.js';
 
-function WordToGuess(){
+function WordToGuess() {
 
     const [linesForWordToGuess, setLinesForWordToGuess] = useState([]);
     const [word, setWord] = useState([]);
@@ -18,67 +19,22 @@ function WordToGuess(){
     const queryParams = Object.fromEntries(params);
     const category = queryParams.category;
     const level = queryParams.level;
-    let setOfWords;
+    
+    let wordsToChoseFrom;
 
-    if(category === 'nature'){
-        if(level === 'easy'){ //3-5 letters
-            setOfWords = [
-                'PEAR',
-                'TREE',
-                'FLY',
-                'BIRD',
-                'GRASS',
-                'LION',
-                'RAIN'
-            ]
-        } else if(level === 'medium'){ //6-8 letters
-            setOfWords = [
-                'ANTELOPE',
-                'DESERT'
-            ]
-        } else {
-            setOfWords = [ // >8 letters
-                'BUTTERFLY',
-                'HIGHLANDS'
-            ]
-        }
-    } else if(category === 'entertainment'){
-        if(level === 'easy'){
-            setOfWords = [
-                'FILM',
-                'BOOK',
-                'ACTOR',
-                'FUN'
-            ]
-        } else if(level === 'medium'){
-            setOfWords = [
-                'CINEMA',
-                'THEATRE'
-            ]
-        } else {
-            setOfWords = [
-                'NIGHTCLUB'
-            ]
-        }
-    } else {
-        if(level === 'easy'){
-            setOfWords = [
-                'JOB',
-                'FLAT'
-            ]
-        } else if(level === 'medium'){
-            setOfWords = [
-                'PEOPLE',
-                'FRIEND',
-                'COMPANY'
-            ]
-        } else {
-            setOfWords = [
-                'SCIENTIST',
-                'CIVILIZATION'
-            ]
-        }
+    switch (category) {
+        case 'nature':
+            wordsToChoseFrom = { easy: natureAndEasy, medium: natureAndMedium, difficult: natureAndDifficult };
+            break;
+        case 'entertainment':
+            wordsToChoseFrom = { easy: entertainmentAndEasy, medium: entertainmentAndMedium, difficult: entertainmentAndDifficult };
+            break;
+        default:
+            wordsToChoseFrom = { easy: societyAndEasy, medium: societyAndMedium, difficult: societyAndDifficult };
+            break;
     }
+
+    const setOfWords = wordsToChoseFrom[level];
 
     function returnAWordToGuess() {
         let indexOfRandomWord = Math.floor(Math.random() * setOfWords.length);
@@ -87,34 +43,34 @@ function WordToGuess(){
 
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
-        function searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord(item, index){
+        function searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord(item, index) {
 
-            if(index === indexOfRandomWord){
-                    let word = item;
+            if (index === indexOfRandomWord) {
+                let word = item;
 
-                    let linesForWordToGuess = Array.from(item).map((letterOfWordToGuess, indexOfLetterOfWordToGuess) =>
-                        <li key={"letterAndLineContainer"+indexOfLetterOfWordToGuess} className="letterAndLineContainer">
-                            <span key={"letterAboveLine"+indexOfLetterOfWordToGuess} className="letterAboveLine"></span>
-                            <span key={indexOfLetterOfWordToGuess} className="lineForWordToGuess">&nbsp;_______&nbsp;</span>
-                        </li>
-                    );
+                let linesForWordToGuess = Array.from(item).map((letterOfWordToGuess, indexOfLetterOfWordToGuess) =>
+                    <li key={"letterAndLineContainer" + indexOfLetterOfWordToGuess} className="letterAndLineContainer">
+                        <span key={"letterAboveLine" + indexOfLetterOfWordToGuess} className="letterAboveLine"></span>
+                        <span key={indexOfLetterOfWordToGuess} className="lineForWordToGuess">&nbsp;_______&nbsp;</span>
+                    </li>
+                );
 
-                    setLinesForWordToGuess(linesForWordToGuess);
-                    setWord(word);
-                    setWordSelected(true);
-            } 
+                setLinesForWordToGuess(linesForWordToGuess);
+                setWord(word);
+                setWordSelected(true);
+            }
 
         }
 
         const elements = document.getElementsByClassName('letterAboveLine');
-            for (let i = 0; i < elements.length; i++) {
+        for (let i = 0; i < elements.length; i++) {
             elements[i].innerText = '';
         }
 
         document.getElementById('mark').style.opacity = 0;
 
         let lettersOfAbcFromThePreviousWord = document.getElementsByClassName('letters');
-        (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord)=>{
+        (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord) => {
             letterFromPreviousWord.classList.remove('alreadyInWordLetter');
             letterFromPreviousWord.classList.remove('wrongLetterGuess');
             letterFromPreviousWord.classList.remove('untriedLetter');
@@ -124,20 +80,19 @@ function WordToGuess(){
     }
 
     const backToMainPage = () => {
-    // window.location.href = '/';
-       window.location.href = '/hangman-game/';
+        window.location.href = '/hangman-game/';
     };
-    
-    useEffect(() => { 
+
+    useEffect(() => {
         returnAWordToGuess();
     }, []);
 
-    return(
+    return (
         <div>
             <div id="gameDiv">
                 <ul>
                     {linesForWordToGuess}
-                    <li><img src={wrongGuess>6 ? xmark :checkmark} alt="mark" id="mark"></img></li>
+                    <li><img src={wrongGuess > 6 ? xmark : checkmark} alt="mark" id="mark"></img></li>
                 </ul>
                 <br></br>
                 {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
