@@ -1,5 +1,7 @@
 # Save the cheese
 
+Try it out: https://dorottyavarju.github.io/save-the-cheese/
+
 It is a simple game, almost the same as the hangman game, except for the goal here is to keep away the mouse from the cheese.
 The concept is that the cheese is Yours and You want to make a pizza or lasagne or anything that contains cheese.
 
