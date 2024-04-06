@@ -24,13 +24,13 @@ function WordToGuess() {
 
     switch (category) {
         case 'nature':
-            wordsToChoseFrom = { easy: natureAndEasy, medium: natureAndMedium, difficult: natureAndDifficult };
+            wordsToChoseFrom = { easy: natureAndEasy, medium: natureAndMedium, hard: natureAndDifficult };
             break;
         case 'entertainment':
-            wordsToChoseFrom = { easy: entertainmentAndEasy, medium: entertainmentAndMedium, difficult: entertainmentAndDifficult };
+            wordsToChoseFrom = { easy: entertainmentAndEasy, medium: entertainmentAndMedium, hard: entertainmentAndDifficult };
             break;
         default:
-            wordsToChoseFrom = { easy: societyAndEasy, medium: societyAndMedium, difficult: societyAndDifficult };
+            wordsToChoseFrom = { easy: societyAndEasy, medium: societyAndMedium, hard: societyAndDifficult };
             break;
     }
 
