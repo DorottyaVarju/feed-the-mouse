@@ -80,7 +80,7 @@ function WordToGuess() {
     }
 
     const backToMainPage = () => {
-        window.location.href = '/hangman-game/';
+        window.location.href = '/save-the-cheese/';
     };
 
     useEffect(() => {
