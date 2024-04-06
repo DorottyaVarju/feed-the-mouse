@@ -1,9 +1,13 @@
-form {
+form, h1 {
     color: white;
     font-size: 18px;
     font-weight: bold;
     margin: 100px auto;
     text-align: center;
+}
+
+h1 {
+    margin-bottom: -50px;
 }
 
 button {

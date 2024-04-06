@@ -1,7 +1,8 @@
 import React from "react";
 import '../css/HangmanDisplay.css';
 import { useRef, useEffect } from "react";
-
+import cheese from '../images/cheese.png';
+import mouse from '../images/mouse.png';
 
 function HangmanDisplay({wrongGuess}){
     const canvasRef = useRef(null);
@@ -9,77 +10,80 @@ function HangmanDisplay({wrongGuess}){
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
+        ctx.translate(0.5, 0.5);
 
-        ctx.strokeStyle = 'rgba(227,227,227,1)';
+        ctx.strokeStyle = 'white';
         ctx.lineCap = 'round';
-        ctx.lineWidth = 5.5;
+        ctx.lineWidth = 2.5;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // gallows
+        // left leg of the ladder
         if (wrongGuess > 0) {
             ctx.beginPath();
-            ctx.moveTo(10, 130);
-            ctx.lineTo(50, 130);
-            ctx.moveTo(30, 130);
-            ctx.lineTo(30, 10);
-            ctx.moveTo(30, 10);
-            ctx.lineTo(120, 10);
-            ctx.lineTo(120, 20);
+            ctx.moveTo(10, 210);
+            ctx.lineTo(40, 35);
             ctx.stroke();
         }
 
-        // head
+        // right leg of the ladder
         if (wrongGuess > 1) {
             ctx.beginPath();
-            ctx.arc(120, 35, 10, 0, Math.PI * 2, true);
+            ctx.moveTo(50, 210);
+            ctx.lineTo(80, 35); 
             ctx.stroke();
         }
 
-        // body
+        // rung
         if (wrongGuess > 2) {
             ctx.beginPath();
-            ctx.moveTo(120, 50);
-            ctx.lineTo(120, 100);
+            ctx.moveTo(5, 180);
+            ctx.lineTo(62.5, 180);
             ctx.stroke();
         }
 
-        // right arm
+        // rung
         if (wrongGuess > 3) {
             ctx.beginPath();
-            ctx.moveTo(123, 65);
-            ctx.lineTo(140, 80);
+            ctx.moveTo(10, 150);
+            ctx.lineTo(65, 150);
             ctx.stroke();
         }
 
-        // left arm
+        // rung
         if (wrongGuess > 4) {
             ctx.beginPath();
-            ctx.moveTo(117, 65);
-            ctx.lineTo(100, 80);
+            ctx.moveTo(15, 120);
+            ctx.lineTo(72.5, 120);
             ctx.stroke();
         }
 
-        // right leg
+        // rung
         if (wrongGuess > 5) {
             ctx.beginPath();
-            ctx.moveTo(123, 100);
-            ctx.lineTo(140, 120);
+            ctx.moveTo(20, 90);
+            ctx.lineTo(77.5, 90);
             ctx.stroke();
         }
 
-        // left leg
+        // rung
         if (wrongGuess > 6) {
             ctx.beginPath();
-            ctx.moveTo(117, 100);
-            ctx.lineTo(100, 120);
+            ctx.moveTo(25, 60);
+            ctx.lineTo(82.5, 60);
             ctx.stroke();
         }
+
+        ctx.translate(-0.5, -0.5);
 
     }, [wrongGuess]);
 
     return (
-        <canvas ref={canvasRef}></canvas>
+        <div id="canvasDiv">
+            <img className="mouse" src={mouse} title="mouse"></img>
+            <canvas ref={canvasRef} height="220" width="100"></canvas>
+            <img className="cheese" src={cheese} title="cheese"></img>
+        </div>
     );
 }
 

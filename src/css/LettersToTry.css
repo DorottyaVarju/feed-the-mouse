@@ -7,7 +7,7 @@
 }
 
 #elementsToReturn{
-    height: 40vh;
+    height: 30vh;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
