@@ -1,11 +1,3 @@
-.letters{
-    margin: 2px;
-    font-size: 1.2vw;
-    text-align: center;
-    min-width:20px;
-    min-height: 15px;
-}
-
 #elementsToReturn{
     height: 30vh;
     display: flex;
@@ -13,6 +5,15 @@
     align-content: center;
     justify-content: center;
     padding: 0px 5%;
+}
+
+.letters{
+    margin: 2px;
+    font-size: 1.2vw;
+    text-align: center;
+    min-width:20px;
+    min-height: 15px;
+    height: 3rem;
 }
 
 .alreadyInWordLetter {
@@ -35,8 +36,13 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #elementsToReturn{
+        height: 40vh;
+    }
+
     .letters{
         font-size: 1.5vw;
+        height: 2rem;
     }    
 }
 

@@ -88,11 +88,15 @@ function WordToGuess() {
     }, []);
 
     return (
-        <div>
+        <>
             <div id="gameDiv">
                 <ul>
                     {linesForWordToGuess}
-                    <li><img src={wrongGuess > 6 ? xmark : checkmark} alt="mark" id="mark"></img></li>
+                    <li className="letterAndLineContainer">
+                        <span className="imgAboveLine">
+                            <img src={wrongGuess > 6 ? xmark : checkmark} alt="mark" id="mark"></img>
+                        </span>
+                    </li>
                 </ul>
                 <br></br>
                 {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
@@ -104,7 +108,7 @@ function WordToGuess() {
                 </div>
             </div>
             <LettersToTry word={word} wrongGuess={wrongGuess} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
-        </div>
+        </>
     )
 
 }
