@@ -1,5 +1,6 @@
 import React from "react";
 import '../css/LettersToTry.css';
+import nocheese from '../images/nocheese.png';
 
 function LettersToTry(props) {
 
@@ -24,6 +25,7 @@ function LettersToTry(props) {
         Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
             letter.classList.add('untriedLetter');
         });
+        document.getElementById('mouse').src = nocheese;
     }
     
     function isThisLetterInTheWord(letterOfAbc) {
@@ -35,12 +37,10 @@ function LettersToTry(props) {
                 (Array.from(letterAboveLine)).forEach((line, indexOfLine) => {
                     if (indexOfLine === indexOfWord) {
                         line.innerText = letterOfWord;
-
                         if (!(letterOfAbcElement.classList.contains('alreadyInWordLetter'))) {
                             letterOfAbcElement.classList.add('alreadyInWordLetter');
                         }
                     }
-
                 });
 
                 if ((document.querySelectorAll('.alreadyInWordLetter')).length === word.length) {

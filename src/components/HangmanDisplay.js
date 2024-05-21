@@ -3,6 +3,7 @@ import '../css/HangmanDisplay.css';
 import { useRef, useEffect } from "react";
 import cheese from '../images/cheese.png';
 import mouse from '../images/mouse.png';
+import yescheese from '../images/yescheese.png';
 
 function HangmanDisplay({wrongGuess}){
     const canvasRef = useRef(null);
@@ -80,7 +81,7 @@ function HangmanDisplay({wrongGuess}){
 
     return (
         <div id="canvasDiv">
-            <img className="mouse" src={mouse} title="mouse"></img>
+            <img className="mouse" id="mouse" src={wrongGuess > 6 ? yescheese : mouse} title="mouse"></img>
             <canvas ref={canvasRef} height="220" width="100"></canvas>
             <img className="cheese" src={cheese} title="cheese"></img>
         </div>

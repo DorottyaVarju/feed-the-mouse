@@ -5,6 +5,7 @@ import LettersToTry from './LettersToTry.js';
 import HangmanDisplay from './HangmanDisplay.js';
 import checkmark from '../images/checkmark.png';
 import xmark from '../images/xmark.png';
+import mouse from '../images/mouse.png';
 import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult } from '../Words.js';
 
 function WordToGuess() {
@@ -68,7 +69,7 @@ function WordToGuess() {
         }
 
         document.getElementById('mark').style.opacity = 0;
-
+        if( document.getElementById('mouse')) document.getElementById('mouse').src = mouse;
         let lettersOfAbcFromThePreviousWord = document.getElementsByClassName('letters');
         (Array.from(lettersOfAbcFromThePreviousWord)).forEach((letterFromPreviousWord, indexOfLetterFromPreviousWord) => {
             letterFromPreviousWord.classList.remove('alreadyInWordLetter');
