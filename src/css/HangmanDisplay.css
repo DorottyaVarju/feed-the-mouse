@@ -17,33 +17,63 @@ canvas {
 .cheese {
     height: 3.2rem;
     margin-top: -20px;
-    margin-left: -5rem;
- /*   animation: moveCheese 3s ease-in-out infinite; */
+    margin-left: -6.5rem;
 }
-/*
+
+.cheeseAnimation {
+  animation: moveCheese 2s linear forwards;
+}
+
 @keyframes moveCheese {
     0% {
       transform: translateX(0);
     }
     20% {
-      transform: translateX(-4.2rem);
-    }
+      transform: translate(-2rem, 3rem) rotate(-20deg);
+    } 
     40% {
-        transform: translateX(-4.2rem);
-        transform: translateY(4.2rem);
+        transform: translate(-3.5rem, 4.2rem) rotate(-100deg);
     }
+    60% {
+      transform: translate(-5.5rem, 6.2rem) rotate(-150deg); 
+    }
+    80% {
+      transform: translate(-7.5rem, 8.2rem) rotate(-180deg);
+    } 
     100% {
-      transform: translateX(0);
-    }
-  } */
+      transform: translate(-8.8rem, 15.2rem) rotate(-360deg)
+    } 
+}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-height: 707px) {
     .mouse {
         height: 6.7rem;
     }
     
     .cheese {
         height: 2.7rem;
+        margin-left: -5.5rem;
     }
+
+    @keyframes moveCheese {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translate(-1.5rem, 3rem) rotate(-20deg);
+      } 
+      40% {
+          transform: translate(-3.5rem, 4.2rem) rotate(-100deg);
+      }
+      60% {
+        transform: translate(-5.5rem, 6.2rem) rotate(-150deg); 
+      }
+      80% {
+        transform: translate(-6.5rem, 8.2rem) rotate(-180deg);
+      } 
+      100% {
+        transform: translate(-7.2rem, 12.8rem) rotate(-360deg)
+      } 
+  }
 
 }

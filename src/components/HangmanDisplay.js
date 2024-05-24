@@ -83,7 +83,7 @@ function HangmanDisplay({wrongGuess}){
         <div id="canvasDiv">
             <img className="mouse" id="mouse" src={wrongGuess > 6 ? yescheese : mouse} title="mouse"></img>
             <canvas ref={canvasRef} height="220" width="100"></canvas>
-            <img className="cheese" src={cheese} title="cheese"></img>
+            <img className={wrongGuess > 6 ? 'cheese cheeseAnimation' : 'cheese'} src={cheese} title="cheese"></img>
         </div>
     );
 }
