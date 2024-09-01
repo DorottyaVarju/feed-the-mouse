@@ -1,23 +1,20 @@
-#canvasDiv {
+#drawingDiv {
     display: flex;
     justify-content: center;
-}
-
-canvas {
-    align-self: center;
+    margin-top: 40px;
 }
 
 .mouse {
-    height: 8.5rem;
+    height: 10.5rem;
     align-self: flex-end;
-    margin-right: 5rem;
+    margin-right: -4rem;
 
 }
 
 .cheese {
-    height: 3.2rem;
-    margin-top: -20px;
-    margin-left: -6.5rem;
+    height: 9.2rem;
+    margin-top: -107.5px;
+    margin-left: -10.2rem;
 }
 
 @media only screen and (max-width: 768px) {

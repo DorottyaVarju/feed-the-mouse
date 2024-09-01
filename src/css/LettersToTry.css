@@ -18,14 +18,14 @@
 
 .alreadyInWordLetter {
     background-color: rgb(5, 216, 5);
-    color: white;
+    color: #fff88bff;
     cursor: auto;
     pointer-events: none;
 }
 
 .wrongLetterGuess {
     background: rgb(255, 0, 0);
-    color: white;
+    color: #fff88bff;
     cursor: auto;
     pointer-events: none;
 }
