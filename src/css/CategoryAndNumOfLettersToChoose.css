@@ -12,6 +12,7 @@ h1 {
 }
 
 button {
+    z-index: 1;
     box-sizing: border-box;
     height: 40px;
     padding: 10px 30px;
