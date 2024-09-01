@@ -4,27 +4,109 @@
     margin-top: 40px;
 }
 
+#ladder {
+    display: flex;
+    height: 100%;
+    margin-top: -20px;
+}
+
+#ladderFootDiv {
+    display: flex;
+    position: absolute;
+    height: 100%;
+}
+
+#rungDiv {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.ladderfoot {
+    height: 18.5rem;
+    width: 11.2rem;
+    min-height: 250px;
+    min-width: 150px;
+    opacity: 0;
+}
+
+#ladderfootleft {
+    margin-right: -40px;
+}
+
+#ladderfootright {
+    margin-left: -60px;
+}
+
+.rung {
+    height: 5rem;
+    width: 195px;
+    min-height: 360px;
+    margin-bottom: -310px;
+    opacity: 0;
+}
+
+#rung1 {
+    margin-left: 50px;
+    margin-top: -130px;
+}
+
+#rung2 {
+    margin-left: 40px;
+}
+
+#rung3 {
+    margin-left: 30px;
+}
+
+#rung4 {
+    margin-left: 25px;
+}
+
+#rung5 {
+    margin-left: 15px;
+}
+
 .mouse {
     height: 10.5rem;
     align-self: flex-end;
     margin-right: -4rem;
-
+    min-height: 108px;
+    min-width: 152px;
 }
 
 .cheese {
     height: 9.2rem;
     margin-top: -107.5px;
     margin-left: -10.2rem;
+    min-height: 88px;
+    min-width: 125px;
 }
 
 @media only screen and (max-width: 768px) {
+
+    #ladder {
+        margin-top: -45px;
+    }
+
+    .ladderfoot {
+        height: 10.5rem;
+        width: 7.7rem;
+    }
+
+    .rung {
+        width: 128px;
+        margin-bottom: -322px;
+    }
+
     .mouse {
         height: 6.7rem;
     }
     
     .cheese {
-        height: 2.7rem;
-        margin-left: -5.5rem;
+        height: 5.5rem;
+        margin-left: -6.7rem;
     }
 
 }

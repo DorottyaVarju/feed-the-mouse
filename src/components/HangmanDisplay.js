@@ -53,17 +53,17 @@ function HangmanDisplay({wrongGuess}){
     return (
         <div id="drawingDiv">
             <img className="mouse" id="mouse" alt="mouse" src={wrongGuess > 6 ? yescheese : mouse} title="mouse"></img>
-            <div id="ladder" style={{display: 'flex', height: "100%", marginTop: "-20px"}}>
-                <div style={{display: 'flex', position: "absolute", height: "100%"}}>
-                    <img style={{height:'300px', width:'180px', marginRight:'-40px', opacity:'0'}} className="ladderfoot" id="ladderfootleft" alt="ladderfootleft" src={ladderfoot} title="ladderfootleft"></img>
-                    <img style={{height:'300px', width:'180px', marginLeft:'-60px', opacity:'0'}} className="ladderfoot" id="ladderfootright" alt="ladderfootright" src={ladderfoot} title="ladderfootright"></img>
+            <div id="ladder">
+                <div id="ladderFootDiv">
+                    <img className="ladderfoot" id="ladderfootleft" alt="ladderfootleft" src={ladderfoot} title="ladderfootleft"></img>
+                    <img className="ladderfoot" id="ladderfootright" alt="ladderfootright" src={ladderfoot} title="ladderfootright"></img>
                 </div>
-                <div style={{display: 'flex', flexDirection:"column", height: '100%', position: "relative"}}>
-                    <img style={{height:'360px', width:'195px', marginBottom: '-310px', marginLeft: '50px',marginTop: '-115px', opacity:'0'}} className="rung" id="rung1" alt="rung1" src={rung} title="rung"></img>
-                    <img style={{height:'360px', width:'195px', marginBottom: '-310px', marginLeft: '40px', opacity:'0'}} className="rung" id="rung2" alt="rung2" src={rung} title="rung"></img>
-                    <img style={{height:'360px', width:'195px', marginBottom: '-310px', marginLeft: '30px', opacity:'0'}} className="rung" id="rung3" alt="rung3" src={rung} title="rung"></img>
-                    <img style={{height:'360px', width:'195px', marginBottom: '-310px', marginLeft: '25px', opacity:'0'}} className="rung" id="rung4" alt="rung4" src={rung} title="rung"></img>
-                    <img style={{height:'360px', width:'195px', marginBottom: '-310px', marginLeft: '15px', opacity:'0'}} className="rung" id="rung5" alt="rung5" src={rung} title="rung"></img>
+                <div id="rungDiv">
+                    <img className="rung" id="rung1" alt="rung1" src={rung} title="rung"></img>
+                    <img className="rung" id="rung2" alt="rung2" src={rung} title="rung"></img>
+                    <img className="rung" id="rung3" alt="rung3" src={rung} title="rung"></img>
+                    <img className="rung" id="rung4" alt="rung4" src={rung} title="rung"></img>
+                    <img className="rung" id="rung5" alt="rung5" src={rung} title="rung"></img>
                 </div>
             </div>
             <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
