@@ -18,11 +18,11 @@ function CategoryAndNumOfLettersToChoose() {
         if(inputs.category !== undefined && inputs.level !== undefined) {
             navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
         } else if(inputs.category === undefined && inputs.level !== undefined) {
-            document.getElementById('errorMsg').innerText = 'Please, choose a category!';
+            document.getElementById('errorMsg').innerText = 'Please, select a category!';
         } else if(inputs.category !== undefined && inputs.level === undefined) {
-            document.getElementById('errorMsg').innerText = 'Please, choose a level!';
+            document.getElementById('errorMsg').innerText = 'Please, select a level!';
         } else {
-           document.getElementById('errorMsg').innerText = 'Please, choose a category and a level!';
+           document.getElementById('errorMsg').innerText = 'Please, select a category and a level!';
         }
     }
 
@@ -30,7 +30,7 @@ function CategoryAndNumOfLettersToChoose() {
         <>
             <h1>Save the cheese - by guessing a word - before the mouse eats it!</h1>
             <form onSubmit={handleSubmit}>
-                <label>Choose a category:</label>
+                <label>Select a category:</label>
                 <br></br>
                 <select name="category" value={inputs.category || ""} onChange={handleChange}>
                     <option value="" disabled>Select a category</option>
@@ -40,7 +40,7 @@ function CategoryAndNumOfLettersToChoose() {
                 </select>
                 <br></br>
                 <br></br>
-                <label>Choose the level:</label>
+                <label>Select a level:</label>
                 <br></br>
                 <select name="level" value={inputs.level || ""} onChange={handleChange}>
                     <option value="" disabled>Select a level</option>

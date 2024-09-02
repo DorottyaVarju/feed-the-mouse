@@ -43,6 +43,7 @@ select {
     font-size: 18px;
     font-weight: bold;
     outline: none;
+    margin-top: 8px;
 }
 
 select option {
