@@ -22,6 +22,11 @@ function WordToGuess() {
     const queryParams = Object.fromEntries(params);
     const category = queryParams.category;
     const level = queryParams.level;
+    const data = JSON.parse(localStorage.getItem('formData'));
+    let gamerName = JSON.stringify(data.name, null, 2);
+    if (gamerName.startsWith('"') && gamerName.endsWith('"')) {
+        gamerName = gamerName.slice(1, -1);
+    }
     
     let wordsToChoseFrom;
 
@@ -93,6 +98,11 @@ function WordToGuess() {
     return (
         <>
             <div id="gameDiv">
+                <div id="selectedCatAndLevel">
+                    {gamerName && <h1>Hi, {gamerName}!</h1>}
+                    <h1>Selected category: {category.toUpperCase()}</h1>
+                    <h1>Selected level: {level.toUpperCase()}</h1>
+                </div>  
                 <ul>
                     {linesForWordToGuess}
                     <li className="letterAndLineContainer">

@@ -12,9 +12,13 @@ function CategoryAndNumOfLettersToChoose() {
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
+    const [gamersName, setGamersName] = useState("");
     
     const handleSubmit = (event) => {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    localStorage.setItem('formData', JSON.stringify(data));
         if(inputs.category !== undefined && inputs.level !== undefined) {
             navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
         } else if(inputs.category === undefined && inputs.level !== undefined) {
@@ -30,6 +34,12 @@ function CategoryAndNumOfLettersToChoose() {
         <>
             <h1>Save the cheese - by guessing a word - before the mouse eats it!</h1>
             <form onSubmit={handleSubmit}>
+                <label>Enter your name:</label>
+                <br></br>
+                <input type="text" name="name" id="name" autoFocus value={gamersName}
+          onChange={(e) => setGamersName(e.target.value)} />
+                <br></br>
+                <br></br>
                 <label>Select a category:</label>
                 <br></br>
                 <select name="category" value={inputs.category || ""} onChange={handleChange}>

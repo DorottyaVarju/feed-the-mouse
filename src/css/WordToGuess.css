@@ -81,6 +81,18 @@ button:hover {
     align-self: flex-end;
 }
 
+#selectedCatAndLevel {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+div#selectedCatAndLevel > h1 {
+    margin: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
 @media only screen and (max-width: 768px) {
     #gameDiv {
         height: 60vh;
@@ -91,6 +103,10 @@ button:hover {
         border-radius: 18px;
         font-size: 16px;
     }   
+
+    div#selectedCatAndLevel > h1 {
+        font-size: 16px;
+    }
 
     .letterAboveLine {
         font-size: 33px;
@@ -122,6 +138,10 @@ button:hover {
         border-radius: 16px;
         font-size: 11px;
     }   
+
+    div#selectedCatAndLevel > h1 {
+        font-size: 11px;
+    }
 
     .letterAboveLine {
         font-size: 25px;
