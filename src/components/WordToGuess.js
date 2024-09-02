@@ -6,6 +6,8 @@ import HangmanDisplay from './HangmanDisplay.js';
 import checkmark from '../images/checkmark.png';
 import xmark from '../images/xmark.png';
 import mouse from '../images/mouse.png';
+import yescheese from '../images/yescheese.png';
+import cheese from '../images/cheese.png';
 import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult } from '../Words.js';
 
 function WordToGuess() {
@@ -100,7 +102,11 @@ function WordToGuess() {
                     </li>
                 </ul>
                 <br></br>
-                {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
+                <div id="drawingDiv">
+                    <img className="mouse" id="mouse" alt="mouse" src={wrongGuess > 6 ? yescheese : mouse} title="mouse"></img>
+                    {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
+                    <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
+                </div>
                 <br></br>
                 <br></br>
                 <div id="buttonDiv">
