@@ -16,18 +16,22 @@ function WordToGuess() {
     const [word, setWord] = useState([]);
     const [wrongGuess, setWrongGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
-
-    const fragment = decodeURIComponent(window.location.hash);
-    const params = fragment.split('?')[1].split('&').map(param => param.split('='));
-    const queryParams = Object.fromEntries(params);
-    const category = queryParams.category;
-    const level = queryParams.level;
     const data = JSON.parse(localStorage.getItem('formData'));
+
+    let category = JSON.stringify(data.category, null, 2);
+    let level = JSON.stringify(data.level, null, 2);
     let gamerName = JSON.stringify(data.name, null, 2);
+
+    if (category.startsWith('"') && category.endsWith('"')) {
+        category = category.slice(1, -1);
+    }
+    if (level.startsWith('"') && level.endsWith('"')) {
+        level = level.slice(1, -1);
+    }
     if (gamerName.startsWith('"') && gamerName.endsWith('"')) {
         gamerName = gamerName.slice(1, -1);
     }
-    
+
     let wordsToChoseFrom;
 
     switch (category) {

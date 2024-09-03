@@ -18,9 +18,10 @@ function CategoryAndNumOfLettersToChoose() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+
     localStorage.setItem('formData', JSON.stringify(data));
         if(inputs.category !== undefined && inputs.level !== undefined) {
-            navigate(`/game?category=${inputs.category}&level=${inputs.level}`);
+            navigate(`/game`);
         } else if(inputs.category === undefined && inputs.level !== undefined) {
             document.getElementById('errorMsg').innerText = 'Please, select a category!';
         } else if(inputs.category !== undefined && inputs.level === undefined) {

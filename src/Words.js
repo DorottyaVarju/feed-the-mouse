@@ -34,16 +34,15 @@ const natureAndMedium = [
     'STREAM',
     'PEBBLE',
     'BREEZE',
-    'BLOSSOM',
     'VALLEY',
-    'GLACIER',
     'EARTH',
     'CORAL',
     'PLAINS',
     'BEACH',
     'BAMBOO',
     'BRANCH',
-    'STONE'
+    'STONE',
+    'TUNDRA'
 ]
 
 const natureAndDifficult = [
@@ -51,9 +50,7 @@ const natureAndDifficult = [
     'PRAIRIE',
     'VOLCANO',
     'RAINBOW',
-    'WATERFALL',
     'WOODLAND',
-    'TUNDRA',
     'SEASIDE',
     'MEADOWS',
     'THUNDER',
@@ -72,16 +69,69 @@ const entertainmentAndEasy = [
     'FILM',
     'BOOK',
     'ACTOR',
-    'FUN'
+    'FUN',
+    'SHOW',
+    'GAME',
+    'PLAY',
+    'SONG',
+    'FILM',
+    'BAND',
+    'ARTS',
+    'CHAT',
+    'JOKE',
+    'QUIZ',
+    'CLUB',
+    'FEST',
+    'CAST',
+    'TOUR',
+    'SING',
+    'MUSE',
+    'GALA',
+    'STAR',
+    'ACT'
 ]
 
 const entertainmentAndMedium = [
     'CINEMA',
-    'THEATRE'
+    'MOVIE',
+    'DRAMA',
+    'MUSIC',
+    'DANCE',
+    'EVENT',
+    'PARTY',
+    'COMIC',
+    'STAGE',
+    'ALBUM',
+    'SINGER',
+    'ACTOR',
+    'VIDEO',
+    'SCENE',
+    'RADIO',
+    'ANIME',
+    'STORY',
+    'BALLET',
+    'OPERA'
 ]
 
 const entertainmentAndDifficult = [
-    'NIGHTCLUB'
+    'THEATER',
+    'CONCERT',
+    'CARTOON',
+    'EPISODE',
+    'FANTASY',
+    'MUSICAL',
+    'FESTIVAL',
+    'PERFORM',
+    'REALITY',
+    'DANCING',
+    'PLAYLIST',
+    'SCREEN',
+    'VIRTUAL',
+    'TRAILER',
+    'KARAOKE',
+    'MYSTERY',
+    'CHANNEL',
+    'PODCAST'
 ]
 
 const societyAndEasy = [

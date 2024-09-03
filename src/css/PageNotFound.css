@@ -1,0 +1,18 @@
+#notFound {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#notFound > img {
+    margin-top: -200px;
+    width: 600px;
+    height: 400px;
+}
+
+div#notFound > h1{
+    margin: 0px;
+    margin-top: -40px;
+}
