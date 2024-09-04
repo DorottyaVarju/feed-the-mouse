@@ -1,8 +1,10 @@
 #gameDiv {
-    height: 70vh;
+    /* height: 70vh; */
     display: flex;
     justify-content: center;
     flex-direction: column;
+    grid-column: 1 / 6;
+    grid-row: 1 / 4;
 }
 
 ul {
@@ -83,14 +85,27 @@ button:hover {
 
 #selectedCatAndLevel {
     position: absolute;
-    left: 0;
+    /* left: 0; */
+    /* justify-items: flex-end; */
     top: 0;
+    /* flex-wrap: wrap-reverse; */
+    display: flex;
+    /* flex-direction: row; */
+    align-items: flex-end;
+    width: 100%;
+    justify-content: center;
 }
 
 div#selectedCatAndLevel > h1 {
     margin: 10px;
     text-align: left;
     font-size: 18px;
+}
+
+div#selectedCatAndLevel > h1:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -103,15 +118,6 @@ div#selectedCatAndLevel > h1 {
         border-radius: 18px;
         font-size: 16px;
     }   
-
-    #selectedCatAndLevel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        margin-bottom: -30px;
-    }
 
     div#selectedCatAndLevel > h1 {
         font-size: 16px;

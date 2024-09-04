@@ -103,7 +103,7 @@ function WordToGuess() {
         <>
             <div id="gameDiv">
                 <div id="selectedCatAndLevel">
-                    {gamerName && <h1>Hi, {gamerName}!</h1>}
+                    <h1>{gamerName ? 'Hi, '+gamerName+'!' : ''}</h1>
                     <h1>Selected category: {category.toUpperCase()}</h1>
                     <h1>Selected level: {level.toUpperCase()}</h1>
                 </div>  
