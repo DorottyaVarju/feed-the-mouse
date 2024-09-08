@@ -1,10 +1,10 @@
 #gameDiv {
-    /* height: 70vh; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     grid-column: 1 / 6;
     grid-row: 1 / 4;
+    min-height: 363px;
 }
 
 ul {
@@ -169,5 +169,21 @@ div#selectedCatAndLevel > h1:first-child {
     
     #checkmark{
         width: 19px;
+    }
+}
+
+@media only screen and (max-height: 800px) and (orientation: portrait){
+    .letterAndLineContainer{
+        max-height: 70px;
+    }
+}
+
+@media only screen and (max-height: 800px) and (orientation: landscape) {
+    button {
+        font-size: 15px;
+    }   
+
+    #buttonDiv {
+        margin-bottom: -40px;
     }
 }

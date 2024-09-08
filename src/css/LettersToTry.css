@@ -1,5 +1,4 @@
 #elementsToReturn{
-   /* height: 30vh; */
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -7,6 +6,7 @@
     padding: 0px 5%;
     grid-column: 1 / 6;
     grid-row: 4 / 6;
+    min-height: 300px;
 }
 
 .letters{
@@ -40,6 +40,7 @@
 @media only screen and (max-width: 768px) {
     #elementsToReturn{
         height: 40vh;
+        margin-top: -40px;
     }
 
     .letters{
@@ -52,4 +53,10 @@
     .letters{
         font-size: 3vw;
     }    
+}
+
+@media only screen and (max-height: 800px) and (orientation: landscape) {
+    #elementsToReturn{
+        height: 40vh;
+    }   
 }
