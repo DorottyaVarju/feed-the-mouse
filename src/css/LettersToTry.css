@@ -40,7 +40,7 @@
 @media only screen and (max-width: 768px) {
     #elementsToReturn{
         height: 40vh;
-        margin-top: -40px;
+        margin-top: -50px;
     }
 
     .letters{
