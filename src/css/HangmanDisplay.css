@@ -1,20 +1,25 @@
 #drawingDiv {
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     justify-content: center;
     margin-top: 40px;
     opacity: 0;
+    height: 18.5rem;
 }
 
 #ladder {
     display: flex;
     height: 100%;
     margin-top: -20px;
+    grid-column: 6 / 10;
+    grid-row: 1 / 5;
 }
 
 #ladderFootDiv {
     display: flex;
     position: absolute;
-    height: 100%;
+    height: 18.5rem;
 }
 
 #rungDiv {
@@ -75,25 +80,34 @@
     margin-right: -4rem;
     min-height: 108px;
     min-width: 152px;
+    grid-column: 4 / 10;
+    grid-row: 5 / 5;
 }
 
 .cheese {
     height: 9.2rem;
     margin-top: -107.5px;
-    margin-left: -10.2rem;
+    margin-left: 4.5rem;
     min-height: 88px;
     min-width: 125px;
+    grid-column: 6 / 10;
+    grid-row: 1 / 5;
 }
 
 @media only screen and (max-width: 768px) {
 
     #ladder {
         margin-top: -45px;
+        grid-column: 5 / 10;
     }
 
     .ladderfoot {
         height: 10.5rem;
         width: 7.7rem;
+    }
+
+    #drawingDiv {
+        height: 10.5rem;
     }
 
     .rung {
@@ -103,11 +117,12 @@
 
     .mouse {
         height: 6.7rem;
+        grid-column: 2 / 10;
     }
     
     .cheese {
-        height: 5.5rem;
-        margin-left: -6.7rem;
+        height: 6.5rem;
+        grid-column: 5 / 10;
     }
 
 }
