@@ -187,3 +187,9 @@ div#selectedCatAndLevel > h1:first-child {
         margin-bottom: -40px;
     }
 }
+
+@media only screen and (max-height: 600px) and (orientation: landscape) {
+    div#selectedCatAndLevel > h1 {
+        margin-bottom: -80px;
+    }
+}

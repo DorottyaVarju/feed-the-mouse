@@ -40,13 +40,19 @@
 @media only screen and (max-width: 768px) {
     #elementsToReturn{
         height: 40vh;
-        margin-top: -50px;
+        margin-top: -35px;
     }
 
     .letters{
         font-size: 1.5vw;
         height: 2rem;
     }    
+
+    @media only screen and (orientation: landscape) {
+        #elementsToReturn{
+            margin-top: -50px;
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
