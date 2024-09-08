@@ -37,9 +37,6 @@ button:hover {
 }
 
 select, input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     box-sizing: border-box;
     height: 50px;
     padding: 10px 30px;

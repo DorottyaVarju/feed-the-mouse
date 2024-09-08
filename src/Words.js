@@ -136,18 +136,73 @@ const entertainmentAndDifficult = [
 
 const societyAndEasy = [
     'JOB',
-    'FLAT'
+    'FLAT',
+    'LAW',
+    'JOB',
+    'AID',
+    'GOV',
+    'ROLE',
+    'NORM',
+    'VOTE',
+    'TEAM',
+    'CARE',
+    'CLUB',
+    'HELP',
+    'RULE',
+    'CITY',
+    'TASK',
+    'PLAN',
+    'NEED',
+    'FUND',
+    'HOME',
+    'DATA',
+    'PEER',
+    'BAND',
+    'FARM'
 ]
 
 const societyAndMedium = [
     'PEOPLE',
     'FRIEND',
-    'COMPANY'
+    'RIGHTS',
+    'VALUES',
+    'ETHICS',
+    'EQUITY',
+    'FAMILY',
+    'POLICY',
+    'SOCIAL',
+    'CHANGE',
+    'LABOR',
+    'SCHOOL',
+    'HEALTH',
+    'WEALTH',
+    'CENSUS',
+    'CLASS',
+    'GROUP',
+    'TRUST',
+    'VOICE',
+    'UNION'
 ]
 
 const societyAndDifficult = [
-    'SCIENTIST',
-    'CIVILIZATION'
+    'COMPANY',
+    'JUSTICE',
+    'FREEDOM',
+    'WELFARE',
+    'CULTURE',
+    'EQUALITY',
+    'CHARITY',
+    'NETWORK',
+    'SUPPORT',
+    'RESPECT',
+    'PURPOSE',
+    'HOUSING',
+    'COUNCIL',
+    'REVENUE',
+    'SERVICE',
+    'CONFLICT',
+    'DEFENCE',
+    'WORSHIP'
 ]
 
 export {natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult};

@@ -37,7 +37,7 @@ function CategoryAndNumOfLettersToChoose() {
             <form onSubmit={handleSubmit}>
                 <label>Enter your name:</label>
                 <br></br>
-                <input type="text" name="name" id="name" autoFocus value={gamersName}
+                <input type="text" name="name" id="name" autoFocus autoComplete="off" value={gamersName}
           onChange={(e) => setGamersName(e.target.value)} />
                 <br></br>
                 <br></br>
