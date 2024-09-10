@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 function CategoryAndNumOfLettersToChoose() {
     
+    localStorage.clear();
+    
     const [inputs, setInputs] = useState({});
     const navigate = useNavigate();
     const handleChange = (event) => {
@@ -45,9 +47,10 @@ function CategoryAndNumOfLettersToChoose() {
                 <br></br>
                 <select name="category" value={inputs.category || ""} onChange={handleChange}>
                     <option value="" disabled>Select a category</option>
-                    <option value="nature">Nature</option>
                     <option value="entertainment">Entertainment</option>
+                    <option value="nature">Nature</option>
                     <option value="society">Society</option>
+                    <option value="mixed">Mixed</option>
                 </select>
                 <br></br>
                 <br></br>

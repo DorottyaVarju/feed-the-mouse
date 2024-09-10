@@ -8,30 +8,49 @@ import xmark from '../images/xmark.png';
 import mouse from '../images/mouse.png';
 import yescheese from '../images/yescheese.png';
 import cheese from '../images/cheese.png';
-import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult } from '../Words.js';
+import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult, mixedAndEasy, mixedAndMedium, mixedAndDifficult, } from '../Words.js';
 
 function WordToGuess() {
+    const backToMainPage = () => {
+        window.location.href = '/save-the-cheese/';
+    };
+    const data = JSON.parse(localStorage.getItem('formData'));
+    let category = 'mixed';
+    let level = 'easy';
+    let gamerName = '';
+
+    if(data !== null) {
+        category = JSON.stringify(data.category, null, 2);
+        level = JSON.stringify(data.level, null, 2);
+        gamerName = JSON.stringify(data.name, null, 2);
+
+        if(category !== undefined) {
+            if (category.startsWith('"') && category.endsWith('"')) {
+                category = category.slice(1, -1);
+            }
+        } else {
+            category = 'mixed';
+        }
+
+        if(level !== undefined) {
+            if (level.startsWith('"') && level.endsWith('"')) {
+                level = level.slice(1, -1);
+            }
+        } else {
+            level = 'easy';
+        }
+
+        if(gamerName !== undefined) {
+            if (gamerName.startsWith('"') && gamerName.endsWith('"')) {
+                gamerName = gamerName.slice(1, -1);
+            }
+        }
+    }
 
     const [linesForWordToGuess, setLinesForWordToGuess] = useState([]);
     const [word, setWord] = useState([]);
     const [wrongGuess, setWrongGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
-    const data = JSON.parse(localStorage.getItem('formData'));
-
-    let category = JSON.stringify(data.category, null, 2);
-    let level = JSON.stringify(data.level, null, 2);
-    let gamerName = JSON.stringify(data.name, null, 2);
-
-    if (category.startsWith('"') && category.endsWith('"')) {
-        category = category.slice(1, -1);
-    }
-    if (level.startsWith('"') && level.endsWith('"')) {
-        level = level.slice(1, -1);
-    }
-    if (gamerName.startsWith('"') && gamerName.endsWith('"')) {
-        gamerName = gamerName.slice(1, -1);
-    }
-
     let wordsToChoseFrom;
 
     switch (category) {
@@ -41,8 +60,11 @@ function WordToGuess() {
         case 'entertainment':
             wordsToChoseFrom = { easy: entertainmentAndEasy, medium: entertainmentAndMedium, hard: entertainmentAndDifficult };
             break;
-        default:
+        case 'society':
             wordsToChoseFrom = { easy: societyAndEasy, medium: societyAndMedium, hard: societyAndDifficult };
+            break;
+        default:
+            wordsToChoseFrom = { easy: mixedAndEasy, medium: mixedAndMedium, hard: mixedAndDifficult };
             break;
     }
 
@@ -91,10 +113,6 @@ function WordToGuess() {
         return [linesForWordToGuess, word];
     }
 
-    const backToMainPage = () => {
-        window.location.href = '/save-the-cheese/';
-    };
-
     useEffect(() => {
         returnAWordToGuess();
     }, []);
@@ -103,9 +121,9 @@ function WordToGuess() {
         <>
             <div id="gameDiv">
                 <div id="selectedCatAndLevel">
-                    <h1>{gamerName ? 'Hi, '+gamerName+'!' : ''}</h1>
-                    <h1>Selected category: {category.toUpperCase()}</h1>
-                    <h1>Selected level: {level.toUpperCase()}</h1>
+                    <h1>{gamerName !== '' ? 'Hi, '+gamerName+'!' : ''}</h1>
+                    <h1>Selected category: {category !== undefined ? category.toUpperCase() : ''}</h1>
+                    <h1>Selected level: {level !== undefined ? level.toUpperCase() : ''}</h1>
                 </div>  
                 <ul>
                     {linesForWordToGuess}
