@@ -193,3 +193,13 @@ div#selectedCatAndLevel > h1:first-child {
         margin-bottom: -80px;
     }
 }
+/*
+@media only screen and ((min-width: 768px) and (max-height: 1368px)) {
+    button {
+        font-size: 22px;
+    }  
+
+    #buttonDiv {
+        margin-bottom: -30px;
+    }
+}*/

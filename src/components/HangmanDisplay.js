@@ -4,51 +4,41 @@ import {useEffect } from "react";
 import ladderfoot from '../images/ladderfoot.png';
 import rung from '../images/rung.png';
 
-function HangmanDisplay({wrongGuess}){
+function HangmanDisplay({goodGuess}){
 
     document.getElementById("drawingDiv").style.opacity = "1";
 
-    if(document.getElementById("ladderfootleft") !== null){
-        document.getElementById("ladderfootleft").style.opacity = "0";
-        document.getElementById("ladderfootright").style.opacity = "0";
-        document.getElementById("rung5").style.opacity = "0";
-        document.getElementById("rung4").style.opacity = "0";
-        document.getElementById("rung3").style.opacity = "0";
-        document.getElementById("rung2").style.opacity = "0";
-        document.getElementById("rung1").style.opacity = "0";
-    }
-
     useEffect(() => {
 
-        if (wrongGuess > 0) {
+        if (goodGuess > 0) {
             document.getElementById("ladderfootleft").style.opacity = "1";
         }
 
-        if (wrongGuess > 1) {
+        if (goodGuess > 1) {
             document.getElementById("ladderfootright").style.opacity = "1";
         }
 
-        if (wrongGuess > 2) {
+        if (goodGuess > 2) {
             document.getElementById("rung5").style.opacity = "1";
         }
 
-        if (wrongGuess > 3) {
+        if (goodGuess > 3) {
             document.getElementById("rung4").style.opacity = "1";
         }
 
-        if (wrongGuess > 4) {
+        if (goodGuess > 4) {
             document.getElementById("rung3").style.opacity = "1";
         }
 
-        if (wrongGuess > 5) {
+        if (goodGuess > 5) {
             document.getElementById("rung2").style.opacity = "1";
         }
 
-        if (wrongGuess > 6) {
+        if (goodGuess > 6) {
             document.getElementById("rung1").style.opacity = "5";
         }
 
-    }, [wrongGuess]);
+    }, [goodGuess]);
 
     return (
         <div id="ladder">

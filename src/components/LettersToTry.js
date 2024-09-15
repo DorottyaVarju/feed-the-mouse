@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import '../css/LettersToTry.css';
-import nocheese from '../images/nocheese.png';
+import yescheese from '../images/yescheese.png';
 
 function LettersToTry(props) {
     const abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-    const { word, wrongGuess, onWrongLetter } = props;
+    const { word, goodGuess, onGoodLetter } = props;
     const letterAboveLine = document.getElementsByClassName('letterAboveLine');
     const handleKeyUp = (event) => {
         const letter = event.key.toUpperCase();
@@ -21,7 +21,7 @@ function LettersToTry(props) {
         return () => {
             document.removeEventListener('keyup', handleKeyUp);
         };
-    }, [word, wrongGuess, onWrongLetter]);
+    }, [word, goodGuess, onGoodLetter]);
 
     const handleClick = (item) => () => {
         isThisLetterInTheWord(item);
@@ -45,8 +45,7 @@ function LettersToTry(props) {
         Array.from(document.getElementsByClassName('letters')).forEach((letter) => {
             letter.classList.add('untriedLetter');
         });
-        document.getElementById('mouse').src = nocheese;
-        document.removeEventListener('keyup', handleKeyUp);
+        document.getElementById('mouse').src = yescheese;
     };
 
     function isThisLetterInTheWord(letterOfAbc) {
@@ -87,12 +86,12 @@ function LettersToTry(props) {
             }
         });
 
-        if (!letterFound && onWrongLetter) {
-            onWrongLetter();
-            letterOfAbcElement.classList.add('wrongLetterGuess');
-            //            console.log(wrongGuess);
-            if (wrongGuess > 5) {
+        if(letterFound && onGoodLetter){
+            onGoodLetter();
+        } else {
+            if (goodGuess >= word.length) {
                 unTriedLetter();
+                document.removeEventListener('keyup', handleKeyUp);
                 Array.from(word).forEach((letterOfWord, indexOfWord) => {
                     Array.from(letterAboveLine).forEach((line, indexOfLine) => {
                         if (indexOfLine === indexOfWord) {
@@ -100,6 +99,8 @@ function LettersToTry(props) {
                         }
                     });
                 });
+            } else {
+                letterOfAbcElement.classList.add('wrongLetterGuess');
             }
         }
     }

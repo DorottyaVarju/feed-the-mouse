@@ -49,7 +49,7 @@ function WordToGuess() {
 
     const [linesForWordToGuess, setLinesForWordToGuess] = useState([]);
     const [word, setWord] = useState([]);
-    const [wrongGuess, setWrongGuess] = useState(0);
+    const [goodGuess, setGoodGuess] = useState(0);
     const [wordSelected, setWordSelected] = useState(false);
     let wordsToChoseFrom;
 
@@ -73,7 +73,17 @@ function WordToGuess() {
     function returnAWordToGuess() {
         let indexOfRandomWord = Math.floor(Math.random() * setOfWords.length);
 
-        setWrongGuess(0);
+        setGoodGuess(0);
+
+        if(document.getElementById("ladderfootleft") !== null){
+            document.getElementById("ladderfootleft").style.opacity = "0";
+            document.getElementById("ladderfootright").style.opacity = "0";
+            document.getElementById("rung5").style.opacity = "0";
+            document.getElementById("rung4").style.opacity = "0";
+            document.getElementById("rung3").style.opacity = "0";
+            document.getElementById("rung2").style.opacity = "0";
+            document.getElementById("rung1").style.opacity = "0";
+        }
 
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
@@ -117,6 +127,12 @@ function WordToGuess() {
         returnAWordToGuess();
     }, []);
 
+    const handleGoodLetter = () => {
+        if (word.length > goodGuess) {
+          setGoodGuess(goodGuess + 1);
+        }
+    };
+
     return (
         <>
             <div id="gameDiv">
@@ -129,14 +145,14 @@ function WordToGuess() {
                     {linesForWordToGuess}
                     <li className="letterAndLineContainer">
                         <span className="imgAboveLine">
-                            <img src={wrongGuess > 6 ? xmark : checkmark} alt="mark" id="mark"></img>
+                            <img src={goodGuess < {word}.length ? xmark : checkmark} alt="mark" id="mark"></img>
                         </span>
                     </li>
                 </ul>
                 <br></br>
                 <div id="drawingDiv">
-                    <img className="mouse" id="mouse" alt="mouse" src={wrongGuess > 6 ? yescheese : mouse} title="mouse"></img>
-                    {wordSelected && <HangmanDisplay wrongGuess={wrongGuess}></HangmanDisplay>}
+                    <img className="mouse" id="mouse" alt="mouse" src={goodGuess < {word}.length ? yescheese : mouse} title="mouse"></img>
+                    {wordSelected && <HangmanDisplay goodGuess={goodGuess}></HangmanDisplay>}
                     <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
                 </div>
                 <br></br>
@@ -146,7 +162,7 @@ function WordToGuess() {
                     <button type="button" id="backBtn" onClick={backToMainPage}>Back to the main page!</button>
                 </div>
             </div>
-            <LettersToTry word={word} wrongGuess={wrongGuess} onWrongLetter={() => setWrongGuess(wrongGuess + 1)}></LettersToTry>
+            <LettersToTry word={word} goodGuess={goodGuess} onGoodLetter={handleGoodLetter}></LettersToTry>
         </>
     )
 

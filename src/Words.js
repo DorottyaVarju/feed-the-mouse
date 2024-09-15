@@ -1,7 +1,5 @@
 const natureAndEasy = [
     'PEAR',
-    'TREE',
-    'FLY',
     'BIRD',
     'LION',
     'RAIN',
@@ -13,14 +11,10 @@ const natureAndEasy = [
     'BARK',
     'SNOW',
     'WIND',
-    'MOSS',
     'SAND',
     'STAR',
     'ROSE',
-    'HILL',
     'LAKE',
-    'WOOD',
-    'REEF',
     'VINE'
 ]
 
@@ -67,9 +61,7 @@ const natureAndDifficult = [
 
 const entertainmentAndEasy = [
     'FILM',
-    'BOOK',
     'ACTOR',
-    'FUN',
     'SHOW',
     'GAME',
     'PLAY',
