@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/save-the-cheese/static/css/main.2b9dc94f.css",
-    "main.js": "/save-the-cheese/static/js/main.e0ba4904.js",
-    "static/js/787.38f16daf.chunk.js": "/save-the-cheese/static/js/787.38f16daf.chunk.js",
-    "static/media/nocheese.png": "/save-the-cheese/static/media/nocheese.fa619098988f9d51a30d.png",
-    "static/media/yescheese.png": "/save-the-cheese/static/media/yescheese.10a54334df5f2da947b1.png",
-    "static/media/mouse.png": "/save-the-cheese/static/media/mouse.0cf3adfea25203a02f52.png",
-    "static/media/404.png": "/save-the-cheese/static/media/404.cb3386b3355e567c8e2f.png",
-    "static/media/bricks.png": "/save-the-cheese/static/media/bricks.485edc2ba1421f09368e.png",
-    "static/media/cheese.png": "/save-the-cheese/static/media/cheese.e6bf00e3132b117c90bd.png",
-    "static/media/ladderfoot.png": "/save-the-cheese/static/media/ladderfoot.3a3f7cbd84e14d6f6a49.png",
-    "static/media/checkmark.png": "/save-the-cheese/static/media/checkmark.1a7c114384194a99868b.png",
-    "index.html": "/save-the-cheese/index.html",
-    "main.2b9dc94f.css.map": "/save-the-cheese/static/css/main.2b9dc94f.css.map",
-    "main.e0ba4904.js.map": "/save-the-cheese/static/js/main.e0ba4904.js.map",
-    "787.38f16daf.chunk.js.map": "/save-the-cheese/static/js/787.38f16daf.chunk.js.map"
+    "main.css": "/feed-the-mouse/static/css/main.77256b19.css",
+    "main.js": "/feed-the-mouse/static/js/main.6fe7e233.js",
+    "static/js/787.38f16daf.chunk.js": "/feed-the-mouse/static/js/787.38f16daf.chunk.js",
+    "static/media/yescheese.png": "/feed-the-mouse/static/media/yescheese.10a54334df5f2da947b1.png",
+    "static/media/mouse.png": "/feed-the-mouse/static/media/mouse.0cf3adfea25203a02f52.png",
+    "static/media/404.png": "/feed-the-mouse/static/media/404.cb3386b3355e567c8e2f.png",
+    "static/media/bricks.png": "/feed-the-mouse/static/media/bricks.485edc2ba1421f09368e.png",
+    "static/media/cheese.png": "/feed-the-mouse/static/media/cheese.e6bf00e3132b117c90bd.png",
+    "static/media/ladderfoot.png": "/feed-the-mouse/static/media/ladderfoot.3a3f7cbd84e14d6f6a49.png",
+    "static/media/checkmark.png": "/feed-the-mouse/static/media/checkmark.1a7c114384194a99868b.png",
+    "index.html": "/feed-the-mouse/index.html",
+    "main.77256b19.css.map": "/feed-the-mouse/static/css/main.77256b19.css.map",
+    "main.6fe7e233.js.map": "/feed-the-mouse/static/js/main.6fe7e233.js.map",
+    "787.38f16daf.chunk.js.map": "/feed-the-mouse/static/js/787.38f16daf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b9dc94f.css",
-    "static/js/main.e0ba4904.js"
+    "static/css/main.77256b19.css",
+    "static/js/main.6fe7e233.js"
   ]
 }
