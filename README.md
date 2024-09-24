@@ -4,7 +4,8 @@ Try it out: https://dorottyavarju.github.io/feed-the-mouse/
 
 Feed the mouse - by guessing a word!
 
-![image](https://github.com/user-attachments/assets/e8d7f3f6-f148-48e5-a2dc-425fb25277bd)
+![image](https://github.com/user-attachments/assets/124349c6-76f3-493a-816f-7a4b45c2828b)
+
 
 
 
