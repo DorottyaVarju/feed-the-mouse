@@ -12,7 +12,7 @@ import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEas
 
 function WordToGuess() {
     const backToMainPage = () => {
-        window.location.href = '/save-the-cheese/';
+        window.location.href = '/feed-the-mouse/';
     };
     const data = JSON.parse(localStorage.getItem('formData'));
     let category = 'mixed';
@@ -75,16 +75,6 @@ function WordToGuess() {
 
         setGoodGuess(0);
 
-        if(document.getElementById("ladderfootleft") !== null){
-            document.getElementById("ladderfootleft").style.opacity = "0";
-            document.getElementById("ladderfootright").style.opacity = "0";
-            document.getElementById("rung5").style.opacity = "0";
-            document.getElementById("rung4").style.opacity = "0";
-            document.getElementById("rung3").style.opacity = "0";
-            document.getElementById("rung2").style.opacity = "0";
-            document.getElementById("rung1").style.opacity = "0";
-        }
-
         setOfWords.forEach(searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord);
 
         function searchForTheValueFromSetOfWordsWithTheIndexOfRandomWord(item, index) {
@@ -105,6 +95,17 @@ function WordToGuess() {
             }
 
         }
+         
+        if(document.getElementById("ladderfootleft") !== null){
+            document.getElementById("ladderfootleft").style.opacity = "0";
+            document.getElementById("ladderfootright").style.opacity = "0";
+            document.getElementById("rung5").style.opacity = "0";
+            document.getElementById("rung4").style.opacity = "0";
+            document.getElementById("rung3").style.opacity = "0";
+            document.getElementById("rung2").style.opacity = "0";
+            document.getElementById("rung1").style.opacity = "0";
+
+        }
 
         const elements = document.getElementsByClassName('letterAboveLine');
         for (let i = 0; i < elements.length; i++) {
@@ -119,7 +120,7 @@ function WordToGuess() {
             letterFromPreviousWord.classList.remove('wrongLetterGuess');
             letterFromPreviousWord.classList.remove('untriedLetter');
         });
-
+        
         return [linesForWordToGuess, word];
     }
 
@@ -152,7 +153,7 @@ function WordToGuess() {
                 <br></br>
                 <div id="drawingDiv">
                     <img className="mouse" id="mouse" alt="mouse" src={goodGuess < {word}.length ? yescheese : mouse} title="mouse"></img>
-                    {wordSelected && <HangmanDisplay goodGuess={goodGuess}></HangmanDisplay>}
+                    {wordSelected && <HangmanDisplay goodGuess={goodGuess} word={word}></HangmanDisplay>}
                     <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
                 </div>
                 <br></br>

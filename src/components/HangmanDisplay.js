@@ -4,9 +4,96 @@ import {useEffect } from "react";
 import ladderfoot from '../images/ladderfoot.png';
 import rung from '../images/rung.png';
 
-function HangmanDisplay({goodGuess}){
+function HangmanDisplay(props){
 
+    const { word, goodGuess } = props;
     document.getElementById("drawingDiv").style.opacity = "1";
+    
+    let ladderFeet = Array.from(document.getElementsByClassName('ladderfoot'));
+    let ladder = document.getElementById('ladder');
+    let rung1 = document.getElementById('rung1');
+    let rung2 = document.getElementById('rung2');
+    let rung3 = document.getElementById('rung3');
+    let rung4 = document.getElementById('rung4');
+    let rung5 = document.getElementById('rung5');
+    let cheese = document.getElementsByClassName('cheese')[0];
+
+
+    
+        switch(word.length) {
+            case 4:
+                if(ladder !== null){
+                    ladder.style.gridRow = '5/5';
+                    ladderFeet.forEach(function(ladderFoot, index) {
+                        ladderFoot.style.minHeight = word.length*26+'px';
+                        ladderFoot.style.height = word.length*0.5+'rem';
+                    });
+                    rung1.style.marginTop = '-282px';
+                    rung5.style.marginLeft = '40px';
+                    rung4.style.marginLeft = '50px';
+                }
+                cheese.style.marginTop = '24px';
+              break;
+            case 5:
+                if(ladder !== null){
+                    ladder.style.gridRow = '4/5';
+                    ladderFeet.forEach(function(ladderFoot, index) {
+                        ladderFoot.style.minHeight = word.length*30+'px';
+                        ladderFoot.style.height = word.length*1+'rem';
+                    });
+                    rung1.style.marginTop = '-245px';
+                    rung5.style.marginLeft = '40px';
+                    rung4.style.marginLeft = '50px';
+                    rung3.style.marginLeft = '60px';
+                }
+                cheese.style.marginTop = '-7px';
+            break;
+            case 6:
+                if(ladder !== null){
+                    ladder.style.gridRow = '3/5';
+                    ladderFeet.forEach(function(ladderFoot, index) {
+                        ladderFoot.style.minHeight = word.length*30+'px';
+                        ladderFoot.style.height = word.length*1+'rem';
+                    });
+                    rung1.style.marginTop = '-210px';
+                    rung5.style.marginLeft = '40px';
+                    rung4.style.marginLeft = '50px';
+                    rung3.style.marginLeft = '55px';
+                    rung2.style.marginLeft = '65px';
+                }
+                cheese.style.marginTop = '-41px';
+            break;
+            case 7:
+                if(ladder !== null){
+                    ladder.style.gridRow = '2/5';
+                    ladderFeet.forEach(function(ladderFoot, index) {
+                        ladderFoot.style.minHeight = word.length*30+'px';
+                        ladderFoot.style.height = word.length*2+'rem';
+                    });
+                    rung1.style.marginTop = '-170px';
+                    rung5.style.marginLeft = '40px';
+                    rung4.style.marginLeft = '50px';
+                    rung3.style.marginLeft = '55px';
+                    rung2.style.marginLeft = '65px';
+                }
+                cheese.style.marginTop = '-73px';
+            break;
+            default:
+                if(ladder !== null){
+                    ladder.style.gridRow = '2/5';
+                    ladderFeet.forEach(function(ladderFoot, index) {
+                        ladderFoot.style.minHeight = word.length*30+'px';
+                        ladderFoot.style.height = word.length*2+'rem';
+                    });
+                    rung1.style.marginTop = '-170px';
+                    rung5.style.marginLeft = '40px';
+                    rung4.style.marginLeft = '50px';
+                    rung3.style.marginLeft = '55px';
+                    rung2.style.marginLeft = '65px';
+                }
+                cheese.style.marginTop = '-73px';
+       
+    }
 
     useEffect(() => {
 

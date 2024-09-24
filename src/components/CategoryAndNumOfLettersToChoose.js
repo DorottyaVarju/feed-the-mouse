@@ -35,7 +35,7 @@ function CategoryAndNumOfLettersToChoose() {
 
     return (
         <>
-            <h1>Save the cheese - by guessing a word - before the mouse eats it!</h1>
+            <h1>Feed the mouse - by guessing a word!</h1>
             <form onSubmit={handleSubmit}>
                 <label>Enter your name:</label>
                 <br></br>

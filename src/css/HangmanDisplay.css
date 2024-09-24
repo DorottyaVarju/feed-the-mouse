@@ -32,7 +32,6 @@
 .ladderfoot {
     height: 18.5rem;
     width: 11.2rem;
-    min-height: 250px;
     min-width: 150px;
     opacity: 0;
 }

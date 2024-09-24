@@ -3,9 +3,6 @@ const natureAndEasy = [
     'BIRD',
     'LION',
     'RAIN',
-    'SUN',
-    'SKY',
-    'FOG',
     'LEAF',
     'POND',
     'BARK',
@@ -20,43 +17,25 @@ const natureAndEasy = [
 
 const natureAndMedium = [
     'RIVER',
-    'DESERT',
     'FOREST',
-    'GRASS',
     'OCEAN',
     'FLOWER',
     'STREAM',
-    'PEBBLE',
-    'BREEZE',
-    'VALLEY',
     'EARTH',
     'CORAL',
     'PLAINS',
     'BEACH',
-    'BAMBOO',
     'BRANCH',
     'STONE',
     'TUNDRA'
 ]
 
 const natureAndDifficult = [
-    'MOUNTAIN',
-    'PRAIRIE',
-    'VOLCANO',
     'RAINBOW',
-    'WOODLAND',
-    'SEASIDE',
     'MEADOWS',
     'THUNDER',
-    'LAGOON',
     'CANYON',
-    'TWILIGHT',
-    'SUNRISE',
-    'HORIZON',
-    'SAVANNA',
-    'JUNGLE',
-    'CYCLONE',
-    'TERRAIN',
+    'JUNGLE'
 ]
 
 const entertainmentAndEasy = [
@@ -78,18 +57,14 @@ const entertainmentAndEasy = [
     'TOUR',
     'SING',
     'MUSE',
-    'GALA',
-    'STAR',
-    'ACT'
+    'STAR'
 ]
 
 const entertainmentAndMedium = [
     'CINEMA',
     'MOVIE',
-    'DRAMA',
     'MUSIC',
     'DANCE',
-    'EVENT',
     'PARTY',
     'COMIC',
     'STAGE',
@@ -97,42 +72,26 @@ const entertainmentAndMedium = [
     'SINGER',
     'ACTOR',
     'VIDEO',
-    'SCENE',
     'RADIO',
     'ANIME',
     'STORY',
-    'BALLET',
     'OPERA'
 ]
 
 const entertainmentAndDifficult = [
-    'THEATER',
     'CONCERT',
-    'CARTOON',
-    'EPISODE',
-    'FANTASY',
     'MUSICAL',
     'FESTIVAL',
     'PERFORM',
     'REALITY',
-    'DANCING',
     'PLAYLIST',
-    'SCREEN',
     'VIRTUAL',
     'TRAILER',
-    'KARAOKE',
-    'MYSTERY',
-    'CHANNEL',
     'PODCAST'
 ]
 
 const societyAndEasy = [
-    'JOB',
     'FLAT',
-    'LAW',
-    'JOB',
-    'AID',
-    'GOV',
     'ROLE',
     'NORM',
     'VOTE',
@@ -144,17 +103,13 @@ const societyAndEasy = [
     'CITY',
     'TASK',
     'PLAN',
-    'NEED',
     'FUND',
     'HOME',
-    'DATA',
-    'PEER',
     'BAND',
     'FARM'
 ]
 
 const societyAndMedium = [
-    'PEOPLE',
     'FRIEND',
     'RIGHTS',
     'VALUES',
@@ -165,88 +120,49 @@ const societyAndMedium = [
     'SOCIAL',
     'CHANGE',
     'LABOR',
-    'SCHOOL',
-    'HEALTH',
     'WEALTH',
-    'CENSUS',
-    'CLASS',
     'GROUP',
-    'TRUST',
-    'VOICE',
-    'UNION'
+    'VOICE'
 ]
 
 const societyAndDifficult = [
     'COMPANY',
     'JUSTICE',
-    'FREEDOM',
-    'WELFARE',
-    'CULTURE',
-    'EQUALITY',
     'CHARITY',
     'NETWORK',
-    'SUPPORT',
-    'RESPECT',
-    'PURPOSE',
-    'HOUSING',
-    'COUNCIL',
-    'REVENUE',
-    'SERVICE',
-    'CONFLICT',
-    'DEFENCE',
+    'HOUSING',   
     'WORSHIP'
 ]
 
 const mixedAndEasy = [
-    'DOOR',
-    'CAT',
     'SHOE',
     'NOSE',
-    'EAR',
     'RING',
-    'TALL',
     'NICE',
     'PEAR',
-    'HEN',
     'FISH',
-    'HELLO',
-    'MIX',
     'SIGN',
-    'BAG',
     'VASE',
     'ROSE',
-    'CUP',
-    'BILL',
-    'CAR',
     'MATH',
-    'ROLL',
     'BAKE',
     'SAIL',
     'TYPE',
-    'TREE',
     'PINE',
     'BIRD',
-    'BOOK',
-    'GEM',
     'PAGE',
     'SHOP',
     'LAMP',
     'LAMB',
     'SIDE',
     'SITE',
-    'SEA',
-    'SEE',
-    'DATE',
-    'DEER'
+    'DATE'
 ]
 
 const mixedAndMedium = [
     'SNAIL',
-    'LAPTOP',
-    'CLOCK',
     'BOARD',
     'FINGER',
-    'CHURCH',
     'MOUSE',
     'FRIDGE',
     'BREAD',
@@ -254,7 +170,6 @@ const mixedAndMedium = [
     'STONE',
     'TABLE',
     'CASTLE',
-    'GLASS',
     'PHONE',
     'HORSE',
     'SHORE',
@@ -268,12 +183,7 @@ const mixedAndMedium = [
 ]
 
 const mixedAndDifficult = [
-    'JOB',
     'FLAT',
-    'LAW',
-    'JOB',
-    'AID',
-    'GOV',
     'ROLE',
     'NORM',
     'VOTE',
@@ -288,8 +198,6 @@ const mixedAndDifficult = [
     'NEED',
     'FUND',
     'HOME',
-    'DATA',
-    'PEER',
     'BAND',
     'FARM'
 ]
