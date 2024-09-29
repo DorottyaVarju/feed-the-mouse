@@ -6,6 +6,7 @@
     margin-top: 40px;
     opacity: 0;
     height: 18.5rem;
+    max-height: 266px;
 }
 
 #ladder {
@@ -78,6 +79,7 @@
     align-self: flex-end;
     margin-right: -4rem;
     min-height: 88px;
+    max-height: 120px;
     min-width: 132px;
     grid-column: 4 / 10;
     grid-row: 5 / 5;
@@ -89,6 +91,7 @@
     margin-top: -107.5px;
     margin-left: 4.5rem;
     min-height: 88px;
+    max-height: 120px;
     min-width: 125px;
     grid-column: 6 / 10;
     grid-row: 1 / 5;
@@ -127,6 +130,21 @@
 
 }
 
+@media only screen and ((min-height: 801px) and (min-width: 769px)) {
+    #ladderFootDiv {
+        margin-top: -20px;
+    }
+    
+    #rung1{
+        margin-top: -140%;
+    }
+    
+    .cheese {
+            margin-top: -116.5px;
+            margin-left: 5.5rem;
+    }
+}
+
 @media only screen and ((max-width: 1050px)) {
 
     .mouse {
@@ -145,36 +163,3 @@
         grid-column: 5 / 10;
     }
 }
-/*
-@media only screen and ((min-width: 768px) and (min-height: 1368px)) {
-    
-    #drawingDiv {
-        height: 18.5rem;
-    }
-
-    #ladder {
-        margin-top: -25px;
-        grid-column: 6 / 10;
-    }
-
-    .ladderfoot {
-        height: 22.5rem;
-        width: 10.7rem;
-    }
-
-    .rung {
-        width: 168px;
-        margin-bottom: -300px;
-    }
-
-    .mouse {
-        height: 8.7rem;
-        grid-column: 3 / 10;
-    }
-    
-    .cheese {
-        height: 8.7rem;
-        grid-column: 6 / 10;
-    }
-
-} */

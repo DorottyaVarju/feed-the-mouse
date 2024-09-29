@@ -85,15 +85,12 @@ button:hover {
 
 #selectedCatAndLevel {
     position: absolute;
-    /* left: 0; */
-    /* justify-items: flex-end; */
     top: 0;
-    /* flex-wrap: wrap-reverse; */
     display: flex;
-    /* flex-direction: row; */
     align-items: flex-end;
     width: 100%;
     justify-content: center;
+    min-height: 680px;
 }
 
 div#selectedCatAndLevel > h1 {

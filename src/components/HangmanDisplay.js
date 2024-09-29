@@ -1,14 +1,14 @@
 import React from "react";
 import '../css/HangmanDisplay.css';
-import {useEffect } from "react";
+import { useEffect } from "react";
 import ladderfoot from '../images/ladderfoot.png';
 import rung from '../images/rung.png';
 
-function HangmanDisplay(props){
+function HangmanDisplay(props) {
 
     const { word, goodGuess } = props;
     document.getElementById("drawingDiv").style.opacity = "1";
-    
+
     let ladderFeet = Array.from(document.getElementsByClassName('ladderfoot'));
     let ladder = document.getElementById('ladder');
     let rung1 = document.getElementById('rung1');
@@ -17,82 +17,136 @@ function HangmanDisplay(props){
     let rung4 = document.getElementById('rung4');
     let rung5 = document.getElementById('rung5');
     let cheese = document.getElementsByClassName('cheese')[0];
+    let bodyHeight = document.body.clientHeight;
 
+    switch (word.length) {
+        case 4:
+            if (ladder !== null) {
+                ladder.style.gridRow = '5/5';
+                ladderFeet.forEach(function (ladderFoot, index) {
+                    ladderFoot.style.minHeight = '120px';
+                    ladderFoot.style.height = word.length * 10 + '%';
+                });
+                rung5.style.marginLeft = '20%';
+                rung4.style.marginLeft = '25%';
 
-    
-        switch(word.length) {
-            case 4:
-                if(ladder !== null){
-                    ladder.style.gridRow = '5/5';
-                    ladderFeet.forEach(function(ladderFoot, index) {
-                        ladderFoot.style.minHeight = word.length*26+'px';
-                        ladderFoot.style.height = word.length*0.5+'rem';
-                    });
-                    rung1.style.marginTop = '-282px';
-                    rung5.style.marginLeft = '40px';
-                    rung4.style.marginLeft = '50px';
+                if (bodyHeight > 800) {
+                    rung1.style.marginTop = '-130%';
+                } else {
+                    rung1.style.marginTop = '-140%';
                 }
-                cheese.style.marginTop = '24px';
-              break;
-            case 5:
-                if(ladder !== null){
-                    ladder.style.gridRow = '4/5';
-                    ladderFeet.forEach(function(ladderFoot, index) {
-                        ladderFoot.style.minHeight = word.length*30+'px';
-                        ladderFoot.style.height = word.length*1+'rem';
-                    });
-                    rung1.style.marginTop = '-245px';
-                    rung5.style.marginLeft = '40px';
-                    rung4.style.marginLeft = '50px';
-                    rung3.style.marginLeft = '60px';
+            }
+            cheese.style.gridRow = '5/5';
+            break;
+        case 5:
+            if (ladder !== null) {
+                ladder.style.gridRow = '4/5';
+                ladderFeet.forEach(function (ladderFoot, index) {
+                    ladderFoot.style.minHeight = '150px';
+                    ladderFoot.style.height = word.length * 12 + '%';
+                });
+                rung5.style.marginLeft = '40px';
+                rung4.style.marginLeft = '50px';
+                rung3.style.marginLeft = '60px';
+                if (bodyHeight > 800) {
+                    rung1.style.marginTop = '-110%';
+                } else {
+                    rung1.style.marginTop = '-120%';
                 }
+            }
+            if (bodyHeight > 800) {
+                cheese.style.marginTop = '45px';
+            } else {
                 cheese.style.marginTop = '-7px';
+            }
             break;
-            case 6:
-                if(ladder !== null){
-                    ladder.style.gridRow = '3/5';
-                    ladderFeet.forEach(function(ladderFoot, index) {
-                        ladderFoot.style.minHeight = word.length*30+'px';
-                        ladderFoot.style.height = word.length*1+'rem';
-                    });
-                    rung1.style.marginTop = '-210px';
-                    rung5.style.marginLeft = '40px';
-                    rung4.style.marginLeft = '50px';
-                    rung3.style.marginLeft = '55px';
-                    rung2.style.marginLeft = '65px';
+        case 6:
+            if (ladder !== null) {
+                ladder.style.gridRow = '3/5';
+                ladderFeet.forEach(function (ladderFoot, index) {
+                    ladderFoot.style.minHeight = '180px';
+                    ladderFoot.style.height = word.length * 14 + '%';
+                });
+                rung5.style.marginLeft = '40px';
+                rung4.style.marginLeft = '50px';
+                rung3.style.marginLeft = '55px';
+                rung2.style.marginLeft = '65px';
+
+                if (bodyHeight > 800) {
+                    rung1.style.marginTop = '-100%';
+                } else {
+                    rung1.style.marginTop = '-100%';
                 }
+            }
+            if (bodyHeight > 800) {
                 cheese.style.marginTop = '-41px';
+            } else {
+                cheese.style.marginTop = '-41px';
+            }
             break;
-            case 7:
-                if(ladder !== null){
+        case 7:
+            if (ladder !== null) {
+                ladderFeet.forEach(function (ladderFoot, index) {
+                    ladderFoot.style.minHeight = '210px';
+                    ladderFoot.style.height = word.length * 12 + '%';
+                });
+                rung5.style.marginLeft = '40px';
+                rung4.style.marginLeft = '50px';
+                rung3.style.marginLeft = '55px';
+                rung2.style.marginLeft = '65px';
+
+                if (bodyHeight > 800) {
+                    ladder.style.gridRow = '3/5';
+                    rung1.style.marginTop = '-70%';
+                    cheese.style.marginTop = '-6px';
+                    rung5.style.marginBottom = '-320px';
+                    rung4.style.marginBottom = '-320px';
+                    rung3.style.marginBottom = '-320px';
+                    rung2.style.marginBottom = '-320px';
+                    rung1.style.marginBottom = '-320px';
+                } else {
                     ladder.style.gridRow = '2/5';
-                    ladderFeet.forEach(function(ladderFoot, index) {
-                        ladderFoot.style.minHeight = word.length*30+'px';
-                        ladderFoot.style.height = word.length*2+'rem';
-                    });
-                    rung1.style.marginTop = '-170px';
-                    rung5.style.marginLeft = '40px';
-                    rung4.style.marginLeft = '50px';
-                    rung3.style.marginLeft = '55px';
-                    rung2.style.marginLeft = '65px';
+                    rung1.style.marginTop = '-83%';
+                    cheese.style.marginTop = '-73px';
                 }
+            }
+            if (bodyHeight > 800) {
+                cheese.style.marginTop = '-6px';
+            } else {
                 cheese.style.marginTop = '-73px';
+            }
             break;
-            default:
-                if(ladder !== null){
+        default:
+            if (ladder !== null) {
+                ladderFeet.forEach(function (ladderFoot, index) {
+                    ladderFoot.style.minHeight = '210px';
+                    ladderFoot.style.height = word.length * 12 + '%';
+                });
+                rung5.style.marginLeft = '40px';
+                rung4.style.marginLeft = '50px';
+                rung3.style.marginLeft = '55px';
+                rung2.style.marginLeft = '65px';
+
+                if (bodyHeight > 800) {
+                    ladder.style.gridRow = '3/5';
+                    rung1.style.marginTop = '-70%';
+                    cheese.style.marginTop = '-6px';
+                    rung5.style.marginBottom = '-320px';
+                    rung4.style.marginBottom = '-320px';
+                    rung3.style.marginBottom = '-320px';
+                    rung2.style.marginBottom = '-320px';
+                    rung1.style.marginBottom = '-320px';
+                } else {
                     ladder.style.gridRow = '2/5';
-                    ladderFeet.forEach(function(ladderFoot, index) {
-                        ladderFoot.style.minHeight = word.length*30+'px';
-                        ladderFoot.style.height = word.length*2+'rem';
-                    });
-                    rung1.style.marginTop = '-170px';
-                    rung5.style.marginLeft = '40px';
-                    rung4.style.marginLeft = '50px';
-                    rung3.style.marginLeft = '55px';
-                    rung2.style.marginLeft = '65px';
+                    rung1.style.marginTop = '-83%';
+                    cheese.style.marginTop = '-73px';
                 }
+            }
+            if (bodyHeight > 800) {
+                cheese.style.marginTop = '-6px';
+            } else {
                 cheese.style.marginTop = '-73px';
-       
+            }
     }
 
     useEffect(() => {

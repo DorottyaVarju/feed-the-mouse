@@ -1,3 +1,4 @@
+//4 letters
 const natureAndEasy = [
     'PEAR',
     'BIRD',
@@ -12,9 +13,13 @@ const natureAndEasy = [
     'STAR',
     'ROSE',
     'LAKE',
-    'VINE'
+    'VINE',
+    'ROCK',
+    'WAVE',
+    'MIST'
 ]
 
+//5-6 letters
 const natureAndMedium = [
     'RIVER',
     'FOREST',
@@ -27,20 +32,38 @@ const natureAndMedium = [
     'BEACH',
     'BRANCH',
     'STONE',
-    'TUNDRA'
+    'TUNDRA',
+    'CANYON',
+    'JUNGLE',
+    'PLANT',
+    'CLOUD',
+    'FIELD',
+    'FLORA',
+    'STORM',
+    'SHORE'
 ]
 
+//7 letters
 const natureAndDifficult = [
     'RAINBOW',
     'MEADOWS',
     'THUNDER',
-    'CANYON',
-    'JUNGLE'
+    'WETLAND',
+    'TRICKLE',
+    'GLACIER',
+    'HARVEST',
+    'FOLIAGE',
+    'THERMAL',
+    'DROUGHT',
+    'MINERAL',
+    'TRANCES',
+    'WATERSP',
+    'OUTCROP'
 ]
 
+//4 letters
 const entertainmentAndEasy = [
     'FILM',
-    'ACTOR',
     'SHOW',
     'GAME',
     'PLAY',
@@ -57,16 +80,18 @@ const entertainmentAndEasy = [
     'TOUR',
     'SING',
     'MUSE',
-    'STAR'
+    'STAR',
+    'TUNE',
+    'SLOT'
 ]
 
+//5-6 different letters
 const entertainmentAndMedium = [
     'CINEMA',
     'MOVIE',
     'MUSIC',
     'DANCE',
     'PARTY',
-    'COMIC',
     'STAGE',
     'ALBUM',
     'SINGER',
@@ -75,11 +100,20 @@ const entertainmentAndMedium = [
     'RADIO',
     'ANIME',
     'STORY',
-    'OPERA'
+    'OPERA',
+    'ACTOR',
+    'SCORE',
+    'MAGIC',
+    'NOVEL',
+    'CHORDS',
+    'PIANO',
+    'REPLAY',
+    'GAMER',
+    'SCRIPT'
 ]
 
+// 7 different letters
 const entertainmentAndDifficult = [
-    'CONCERT',
     'MUSICAL',
     'FESTIVAL',
     'PERFORM',
@@ -87,9 +121,16 @@ const entertainmentAndDifficult = [
     'PLAYLIST',
     'VIRTUAL',
     'TRAILER',
-    'PODCAST'
+    'PODCAST',
+    'VARIETY',
+    'PLAYFUL',
+    'GUITAR',
+    'VENTRIL',
+    'SKETCHY',
+    'OVERACT'
 ]
 
+//4 different letters
 const societyAndEasy = [
     'FLAT',
     'ROLE',
@@ -106,9 +147,13 @@ const societyAndEasy = [
     'FUND',
     'HOME',
     'BAND',
-    'FARM'
+    'FARM',
+    'JOIN',
+    'KIND',
+    'FAIR'
 ]
 
+//5-6 different letters
 const societyAndMedium = [
     'FRIEND',
     'RIGHTS',
@@ -122,18 +167,25 @@ const societyAndMedium = [
     'LABOR',
     'WEALTH',
     'GROUP',
-    'VOICE'
+    'VOICE',
+    'UNITY',
+    'LABOR'
 ]
 
+//7 different letters
 const societyAndDifficult = [
     'COMPANY',
     'JUSTICE',
     'CHARITY',
     'NETWORK',
     'HOUSING',   
-    'WORSHIP'
+    'WORSHIP',
+    'SOCIETY',
+    'ETHICAL',
+    'HARMONY'
 ]
 
+//4 different letters
 const mixedAndEasy = [
     'SHOE',
     'NOSE',
@@ -159,6 +211,7 @@ const mixedAndEasy = [
     'DATE'
 ]
 
+//5-6 different letters
 const mixedAndMedium = [
     'SNAIL',
     'BOARD',
@@ -179,27 +232,28 @@ const mixedAndMedium = [
     'DAISY',
     'CLOTH',
     'PLATE',
-    'KNIFE'
+    'KNIFE',
+    'JUNGLE'
 ]
 
+//7 different letters
 const mixedAndDifficult = [
-    'FLAT',
-    'ROLE',
-    'NORM',
-    'VOTE',
-    'TEAM',
-    'CARE',
-    'CLUB',
-    'HELP',
-    'RULE',
-    'CITY',
-    'TASK',
-    'PLAN',
-    'NEED',
-    'FUND',
-    'HOME',
-    'BAND',
-    'FARM'
+    'BRACING',
+    'JOURNEY',
+    'WHISTLE',
+    'PLUMBER',
+    'FROSTED',
+    'WILDCAT',
+    'SCORING',
+    'HARMFUL',
+    'BRISKET',
+    'MOLDING',
+    'TURBINE',
+    'PLACKET',
+    'SPINDLE',
+    'FOLIAGE',
+    'FLAMING',
+    'DOLPHIN'
 ]
 
 export {natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult, mixedAndEasy, mixedAndMedium, mixedAndDifficult,};
