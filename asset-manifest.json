@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/feed-the-mouse/static/css/main.77256b19.css",
-    "main.js": "/feed-the-mouse/static/js/main.6fe7e233.js",
+    "main.css": "/feed-the-mouse/static/css/main.f6e236d1.css",
+    "main.js": "/feed-the-mouse/static/js/main.7da77f96.js",
     "static/js/787.38f16daf.chunk.js": "/feed-the-mouse/static/js/787.38f16daf.chunk.js",
     "static/media/yescheese.png": "/feed-the-mouse/static/media/yescheese.10a54334df5f2da947b1.png",
     "static/media/mouse.png": "/feed-the-mouse/static/media/mouse.0cf3adfea25203a02f52.png",
@@ -11,12 +11,12 @@
     "static/media/ladderfoot.png": "/feed-the-mouse/static/media/ladderfoot.3a3f7cbd84e14d6f6a49.png",
     "static/media/checkmark.png": "/feed-the-mouse/static/media/checkmark.1a7c114384194a99868b.png",
     "index.html": "/feed-the-mouse/index.html",
-    "main.77256b19.css.map": "/feed-the-mouse/static/css/main.77256b19.css.map",
-    "main.6fe7e233.js.map": "/feed-the-mouse/static/js/main.6fe7e233.js.map",
+    "main.f6e236d1.css.map": "/feed-the-mouse/static/css/main.f6e236d1.css.map",
+    "main.7da77f96.js.map": "/feed-the-mouse/static/js/main.7da77f96.js.map",
     "787.38f16daf.chunk.js.map": "/feed-the-mouse/static/js/787.38f16daf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77256b19.css",
-    "static/js/main.6fe7e233.js"
+    "static/css/main.f6e236d1.css",
+    "static/js/main.7da77f96.js"
   ]
 }
