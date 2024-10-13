@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/feed-the-mouse/static/css/main.f6e236d1.css",
-    "main.js": "/feed-the-mouse/static/js/main.7da77f96.js",
+    "main.css": "/feed-the-mouse/static/css/main.1a1f6706.css",
+    "main.js": "/feed-the-mouse/static/js/main.c39e15f8.js",
     "static/js/787.38f16daf.chunk.js": "/feed-the-mouse/static/js/787.38f16daf.chunk.js",
     "static/media/yescheese.png": "/feed-the-mouse/static/media/yescheese.10a54334df5f2da947b1.png",
     "static/media/mouse.png": "/feed-the-mouse/static/media/mouse.0cf3adfea25203a02f52.png",
     "static/media/404.png": "/feed-the-mouse/static/media/404.cb3386b3355e567c8e2f.png",
     "static/media/bricks.png": "/feed-the-mouse/static/media/bricks.485edc2ba1421f09368e.png",
+    "static/media/ladderMedium.png": "/feed-the-mouse/static/media/ladderMedium.f7de34f8ed0ac7dfa7ed.png",
     "static/media/cheese.png": "/feed-the-mouse/static/media/cheese.e6bf00e3132b117c90bd.png",
-    "static/media/ladderfoot.png": "/feed-the-mouse/static/media/ladderfoot.3a3f7cbd84e14d6f6a49.png",
+    "static/media/ladderHard.png": "/feed-the-mouse/static/media/ladderHard.3a3f7cbd84e14d6f6a49.png",
     "static/media/checkmark.png": "/feed-the-mouse/static/media/checkmark.1a7c114384194a99868b.png",
+    "static/media/ladderEasy.png": "/feed-the-mouse/static/media/ladderEasy.819ffe0cf2498acdf510.png",
     "index.html": "/feed-the-mouse/index.html",
-    "main.f6e236d1.css.map": "/feed-the-mouse/static/css/main.f6e236d1.css.map",
-    "main.7da77f96.js.map": "/feed-the-mouse/static/js/main.7da77f96.js.map",
+    "main.1a1f6706.css.map": "/feed-the-mouse/static/css/main.1a1f6706.css.map",
+    "main.c39e15f8.js.map": "/feed-the-mouse/static/js/main.c39e15f8.js.map",
     "787.38f16daf.chunk.js.map": "/feed-the-mouse/static/js/787.38f16daf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6e236d1.css",
-    "static/js/main.7da77f96.js"
+    "static/css/main.1a1f6706.css",
+    "static/js/main.c39e15f8.js"
   ]
 }
