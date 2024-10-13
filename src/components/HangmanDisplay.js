@@ -1,7 +1,9 @@
 import React from "react";
 import '../css/HangmanDisplay.css';
 import { useEffect } from "react";
-import ladderfoot from '../images/ladderfoot.png';
+import ladderEasy from '../images/ladderEasy.png';
+import ladderMedium from '../images/ladderMedium.png';
+import ladderHard from '../images/ladderHard.png';
 import rung from '../images/rung.png';
 
 function HangmanDisplay(props) {
@@ -9,144 +11,80 @@ function HangmanDisplay(props) {
     const { word, goodGuess } = props;
     document.getElementById("drawingDiv").style.opacity = "1";
 
-    let ladderFeet = Array.from(document.getElementsByClassName('ladderfoot'));
     let ladder = document.getElementById('ladder');
     let rung1 = document.getElementById('rung1');
-    let rung2 = document.getElementById('rung2');
-    let rung3 = document.getElementById('rung3');
-    let rung4 = document.getElementById('rung4');
-    let rung5 = document.getElementById('rung5');
     let cheese = document.getElementsByClassName('cheese')[0];
     let bodyHeight = document.body.clientHeight;
+    let bodyWidth = document.body.clientWidth;
+    let ladderfoot;
 
     switch (word.length) {
-        case 4:
-            if (ladder !== null) {
-                ladder.style.gridRow = '5/5';
-                ladderFeet.forEach(function (ladderFoot, index) {
-                    ladderFoot.style.minHeight = '120px';
-                    ladderFoot.style.height = word.length * 10 + '%';
-                });
-                rung5.style.marginLeft = '20%';
-                rung4.style.marginLeft = '25%';
-
-                if (bodyHeight > 800) {
-                    rung1.style.marginTop = '-130%';
-                } else {
-                    rung1.style.marginTop = '-140%';
-                }
-            }
-            cheese.style.gridRow = '5/5';
-            break;
         case 5:
-            if (ladder !== null) {
-                ladder.style.gridRow = '4/5';
-                ladderFeet.forEach(function (ladderFoot, index) {
-                    ladderFoot.style.minHeight = '150px';
-                    ladderFoot.style.height = word.length * 12 + '%';
-                });
-                rung5.style.marginLeft = '40px';
-                rung4.style.marginLeft = '50px';
-                rung3.style.marginLeft = '60px';
-                if (bodyHeight > 800) {
-                    rung1.style.marginTop = '-110%';
-                } else {
-                    rung1.style.marginTop = '-120%';
-                }
-            }
             if (bodyHeight > 800) {
-                cheese.style.marginTop = '45px';
+                if(bodyWidth > 769){
+                    cheese.style.marginLeft = '75px';
+                    cheese.style.marginTop = '-33.5px';
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-190px';
+                    }
+                } else {
+                    cheese.style.marginLeft = '3.5rem';
+                    cheese.style.marginTop = '-40.5px'; 
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-162px';
+                    }
+                }
             } else {
-                cheese.style.marginTop = '-7px';
+                cheese.style.marginLeft = '3.5rem';
+                cheese.style.marginTop = '-40.5px'; 
             }
+            ladderfoot = ladderMedium;
             break;
         case 6:
-            if (ladder !== null) {
-                ladder.style.gridRow = '3/5';
-                ladderFeet.forEach(function (ladderFoot, index) {
-                    ladderFoot.style.minHeight = '180px';
-                    ladderFoot.style.height = word.length * 14 + '%';
-                });
-                rung5.style.marginLeft = '40px';
-                rung4.style.marginLeft = '50px';
-                rung3.style.marginLeft = '55px';
-                rung2.style.marginLeft = '65px';
-
-                if (bodyHeight > 800) {
-                    rung1.style.marginTop = '-100%';
-                } else {
-                    rung1.style.marginTop = '-100%';
-                }
-            }
             if (bodyHeight > 800) {
-                cheese.style.marginTop = '-41px';
+                if(bodyWidth > 769){
+                    cheese.style.marginLeft = '75px';
+                    cheese.style.marginTop = '-32.5px';
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-163px';
+                    }
+                } else {
+                    cheese.style.marginLeft = '50px';
+                    cheese.style.marginTop = '-40.5px'; 
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-145px';
+                    }
+                }
             } else {
-                cheese.style.marginTop = '-41px';
+                cheese.style.marginLeft = '50px';
+                cheese.style.marginTop = '-40.5px'; 
             }
+
+            ladderfoot = ladderMedium;
             break;
         case 7:
-            if (ladder !== null) {
-                ladderFeet.forEach(function (ladderFoot, index) {
-                    ladderFoot.style.minHeight = '210px';
-                    ladderFoot.style.height = word.length * 12 + '%';
-                });
-                rung5.style.marginLeft = '40px';
-                rung4.style.marginLeft = '50px';
-                rung3.style.marginLeft = '55px';
-                rung2.style.marginLeft = '65px';
-
-                if (bodyHeight > 800) {
-                    ladder.style.gridRow = '3/5';
-                    rung1.style.marginTop = '-70%';
-                    cheese.style.marginTop = '-6px';
-                    rung5.style.marginBottom = '-320px';
-                    rung4.style.marginBottom = '-320px';
-                    rung3.style.marginBottom = '-320px';
-                    rung2.style.marginBottom = '-320px';
-                    rung1.style.marginBottom = '-320px';
-                } else {
-                    ladder.style.gridRow = '2/5';
-                    rung1.style.marginTop = '-83%';
-                    cheese.style.marginTop = '-73px';
-                }
-            }
-            if (bodyHeight > 800) {
-                cheese.style.marginTop = '-6px';
-            } else {
-                cheese.style.marginTop = '-73px';
-            }
+            ladderfoot = ladderHard;
             break;
         default:
-            if (ladder !== null) {
-                ladderFeet.forEach(function (ladderFoot, index) {
-                    ladderFoot.style.minHeight = '210px';
-                    ladderFoot.style.height = word.length * 12 + '%';
-                });
-                rung5.style.marginLeft = '40px';
-                rung4.style.marginLeft = '50px';
-                rung3.style.marginLeft = '55px';
-                rung2.style.marginLeft = '65px';
-
-                if (bodyHeight > 800) {
-                    ladder.style.gridRow = '3/5';
-                    rung1.style.marginTop = '-70%';
-                    cheese.style.marginTop = '-6px';
-                    rung5.style.marginBottom = '-320px';
-                    rung4.style.marginBottom = '-320px';
-                    rung3.style.marginBottom = '-320px';
-                    rung2.style.marginBottom = '-320px';
-                    rung1.style.marginBottom = '-320px';
-                } else {
-                    ladder.style.gridRow = '2/5';
-                    rung1.style.marginTop = '-83%';
-                    cheese.style.marginTop = '-73px';
-                }
-            }
             if (bodyHeight > 800) {
-                cheese.style.marginTop = '-6px';
+                if(bodyWidth > 769){
+                    cheese.style.marginLeft = '67px';
+                    cheese.style.marginTop = '53.5px';
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-170px';
+                    }
+                } else {
+                    cheese.style.marginLeft = '50px';
+                    cheese.style.marginTop = '30.5px'; 
+                    if (ladder !== null) {
+                        rung1.style.marginTop = '-150px';
+                    }
+                }
             } else {
-                cheese.style.marginTop = '-73px';
+                cheese.style.marginLeft = '50px';
+                cheese.style.marginTop = '30.5px'; 
             }
+            ladderfoot = ladderEasy;
     }
 
     useEffect(() => {
