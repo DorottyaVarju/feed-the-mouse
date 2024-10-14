@@ -2,6 +2,7 @@ import './App.css';
 import CategoryAndNumOfLettersToChoose from './components/CategoryAndNumOfLettersToChoose.js';
 import WordToGuess from './components/WordToGuess.js';
 import PageNotFound from './components/PageNotFound.js';
+import FullscreenButton from './components/FullscreenButton';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </HashRouter>
+      <FullscreenButton />
     </div>
   );
 }
