@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/feed-the-mouse/static/css/main.1a1f6706.css",
-    "main.js": "/feed-the-mouse/static/js/main.c39e15f8.js",
+    "main.js": "/feed-the-mouse/static/js/main.a0f92301.js",
     "static/js/787.38f16daf.chunk.js": "/feed-the-mouse/static/js/787.38f16daf.chunk.js",
     "static/media/yescheese.png": "/feed-the-mouse/static/media/yescheese.10a54334df5f2da947b1.png",
     "static/media/mouse.png": "/feed-the-mouse/static/media/mouse.0cf3adfea25203a02f52.png",
@@ -14,11 +14,11 @@
     "static/media/ladderEasy.png": "/feed-the-mouse/static/media/ladderEasy.819ffe0cf2498acdf510.png",
     "index.html": "/feed-the-mouse/index.html",
     "main.1a1f6706.css.map": "/feed-the-mouse/static/css/main.1a1f6706.css.map",
-    "main.c39e15f8.js.map": "/feed-the-mouse/static/js/main.c39e15f8.js.map",
+    "main.a0f92301.js.map": "/feed-the-mouse/static/js/main.a0f92301.js.map",
     "787.38f16daf.chunk.js.map": "/feed-the-mouse/static/js/787.38f16daf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a1f6706.css",
-    "static/js/main.c39e15f8.js"
+    "static/js/main.a0f92301.js"
   ]
 }
