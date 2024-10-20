@@ -14,6 +14,7 @@ h1 {
 
 form {
     margin-top: 200px;
+    max-height: 368px;
 }
 
 button {
@@ -23,7 +24,7 @@ button {
     padding: 10px 30px;
     border-radius: 20px;
     border: none;
-    background-color:#844923ff;
+    background-color:#8c3747;
     cursor: pointer;
     background: transparent;
     color: #fff88bff;
@@ -33,7 +34,7 @@ button {
 
 button:hover {
     background-color: #fff88bff;
-    color: #844923ff;
+    color: #8c3747;
 }
 
 select, input {
@@ -42,7 +43,7 @@ select, input {
     padding: 10px 30px;
     border-radius: 20px;
     border: none;
-    background-color:#844923ff;
+    background-color:#8c3747;
     cursor: pointer;
     color: #fff88bff;
     font-size: 18px;
@@ -58,9 +59,11 @@ input {
 }
 
 select option {
-    background-color:#844923ff;
+    background-color:#8c3747;
 }
 
 #errorMsg {
     color: rgb(255, 0, 0);
+    margin-top: 20px;
+    height: 20px;
 }

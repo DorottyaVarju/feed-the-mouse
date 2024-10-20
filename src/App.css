@@ -7,3 +7,17 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
 }
+
+#fullScreenBtn{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#fullScreenBtn:hover{
+  filter: sepia(1) saturate(500%) hue-rotate(-20deg) brightness(80%);
+}

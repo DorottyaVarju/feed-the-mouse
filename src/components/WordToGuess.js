@@ -139,6 +139,10 @@ function WordToGuess() {
             <div id="gameDiv">
                 <div id="selectedCatAndLevel">
                     <h1>{gamerName !== '' ? 'Hi, '+gamerName+'!' : ''}</h1>
+                    <div id="colorChange">
+                        <button id="pinkBtn"></button>
+                        <button id="brownBtn"></button>
+                    </div>
                     <h1>Selected category: {category !== undefined ? category.toUpperCase() : ''}</h1>
                     <h1>Selected level: {level !== undefined ? level.toUpperCase() : ''}</h1>
                 </div>  
@@ -153,8 +157,10 @@ function WordToGuess() {
                 <br></br>
                 <div id="drawingDiv">
                     <img className="mouse" id="mouse" alt="mouse" src={goodGuess < {word}.length ? yescheese : mouse} title="mouse"></img>
-                    {wordSelected && <HangmanDisplay goodGuess={goodGuess} word={word}></HangmanDisplay>}
-                    <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
+                    <div id="ladderAndCheese">
+                        {wordSelected && <HangmanDisplay goodGuess={goodGuess} word={word}></HangmanDisplay>}
+                        <img className="cheese" src={cheese} alt="cheese" title="cheese"></img>
+                    </div>
                 </div>
                 <br></br>
                 <br></br>

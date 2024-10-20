@@ -12,77 +12,50 @@ function HangmanDisplay(props) {
     document.getElementById("drawingDiv").style.opacity = "1";
 
     let ladder = document.getElementById('ladder');
-    let rung1 = document.getElementById('rung1');
-    let cheese = document.getElementsByClassName('cheese')[0];
-    let bodyHeight = document.body.clientHeight;
-    let bodyWidth = document.body.clientWidth;
+    let rung2 = document.getElementById('rung2');
+    let rung3 = document.getElementById('rung3');
+    let rung4 = document.getElementById('rung4');
+    let rung5 = document.getElementById('rung5');
+    let rungs = document.getElementsByClassName('rung');
     let ladderfoot;
 
     switch (word.length) {
         case 5:
-            if (bodyHeight > 800) {
-                if(bodyWidth > 769){
-                    cheese.style.marginLeft = '75px';
-                    cheese.style.marginTop = '-33.5px';
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-190px';
-                    }
-                } else {
-                    cheese.style.marginLeft = '3.5rem';
-                    cheese.style.marginTop = '-40.5px'; 
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-162px';
-                    }
+            if (ladder !== null) {
+                ladder.style.height = '132px';
+                for (let i = 0; i < rungs.length; i++) {
+                    rungs[i].style.width = '90px';
                 }
-            } else {
-                cheese.style.marginLeft = '3.5rem';
-                cheese.style.marginTop = '-40.5px'; 
+                rung3.style.marginLeft = '15px';
+                rung4.style.marginLeft = '5px';
+                rung5.style.marginLeft = '-5px';
             }
             ladderfoot = ladderMedium;
             break;
         case 6:
-            if (bodyHeight > 800) {
-                if(bodyWidth > 769){
-                    cheese.style.marginLeft = '75px';
-                    cheese.style.marginTop = '-32.5px';
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-163px';
-                    }
-                } else {
-                    cheese.style.marginLeft = '50px';
-                    cheese.style.marginTop = '-40.5px'; 
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-145px';
-                    }
+            if (ladder !== null) {
+                ladder.style.height = '175px';
+                for (let i = 0; i < rungs.length; i++) {
+                    rungs[i].style.width = '115px';
                 }
-            } else {
-                cheese.style.marginLeft = '50px';
-                cheese.style.marginTop = '-40.5px'; 
+                rung2.style.marginLeft = '20px';
+                rung3.style.marginLeft = '10px';
+                rung4.style.marginLeft = '0px';
+                rung5.style.marginLeft = '-10px';
             }
-
             ladderfoot = ladderMedium;
             break;
         case 7:
             ladderfoot = ladderHard;
             break;
         default:
-            if (bodyHeight > 800) {
-                if(bodyWidth > 769){
-                    cheese.style.marginLeft = '67px';
-                    cheese.style.marginTop = '53.5px';
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-170px';
-                    }
-                } else {
-                    cheese.style.marginLeft = '50px';
-                    cheese.style.marginTop = '30.5px'; 
-                    if (ladder !== null) {
-                        rung1.style.marginTop = '-150px';
-                    }
+            if (ladder !== null) {
+                ladder.style.height = '108px';
+                for (let i = 0; i < rungs.length; i++) {
+                    rungs[i].style.width = '108px';
                 }
-            } else {
-                cheese.style.marginLeft = '50px';
-                cheese.style.marginTop = '30.5px'; 
+                rung4.style.marginLeft = '10px';
+                rung5.style.marginLeft = '-10px';
             }
             ladderfoot = ladderEasy;
     }
