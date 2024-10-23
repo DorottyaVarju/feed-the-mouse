@@ -19,14 +19,14 @@
 }
 
 .alreadyInWordLetter {
-    background-color: rgb(5, 216, 5);
+    background-color: rgb(5, 216, 5) !important;
     color: #fff88bff;
     cursor: auto;
     pointer-events: none;
 }
 
 .wrongLetterGuess {
-    background: rgb(255, 0, 0);
+    background: rgb(255, 0, 0) !important;
     color: #fff88bff;
     cursor: auto;
     pointer-events: none;
