@@ -14,6 +14,7 @@ function WordToGuess() {
     const backToMainPage = () => {
         window.location.href = '/feed-the-mouse/';
     };
+
     const data = JSON.parse(localStorage.getItem('formData'));
     let category = 'mixed';
     let level = 'easy';
@@ -128,6 +129,50 @@ function WordToGuess() {
         returnAWordToGuess();
     }, []);
 
+    const themeChange = (id) => {
+        let buttons = document.getElementsByTagName('button');
+
+        let color = window.getComputedStyle(document.getElementById(id)).backgroundColor;
+
+        for (let i = 0; i < buttons.length; i++) {
+            let isChildOfColorChangeDiv = document.getElementById('colorChange').contains(buttons[i]);
+
+            if (!isChildOfColorChangeDiv) {
+                buttons[i].style.backgroundColor = color;
+                
+                buttons[i].addEventListener('mouseover', () => {
+                    buttons[i].style.backgroundColor = '#fff88bff';
+                    buttons[i].style.color = color;
+                });
+
+                buttons[i].addEventListener('mouseout', () => {
+                    buttons[i].style.backgroundColor = color;
+                    buttons[i].style.color = '#fff88bff';
+                });
+
+            }
+        }
+
+        switch (id){
+            case 'brownBtn':
+                document.body.style.backgroundColor = '#533e08d7';
+                break;
+            case 'pinkBtn':
+                document.body.style.backgroundColor = '#b5485d';
+                break;
+            case 'blueBtn':
+                document.body.style.backgroundColor = '#184a87';
+                break;
+            case 'greenBtn':
+                document.body.style.backgroundColor = '#2e785a';
+                break;
+            case 'purpleBtn':
+                document.body.style.backgroundColor = '#53228c';
+                break;
+        }
+
+    };
+    
     const handleGoodLetter = () => {
         if (word.length > goodGuess) {
           setGoodGuess(goodGuess + 1);
@@ -140,8 +185,11 @@ function WordToGuess() {
                 <div id="selectedCatAndLevel">
                     <h1>{gamerName !== '' ? 'Hi, '+gamerName+'!' : ''}</h1>
                     <div id="colorChange">
-                        <button id="pinkBtn"></button>
-                        <button id="brownBtn"></button>
+                        <button id="pinkBtn" onClick={() => themeChange("pinkBtn")}></button>
+                        <button id="brownBtn" onClick={() => themeChange("brownBtn")}></button>
+                        <button id="blueBtn" onClick={() => themeChange("blueBtn")}></button>
+                        <button id="greenBtn" onClick={() => themeChange("greenBtn")}></button>
+                        <button id="purpleBtn" onClick={() => themeChange("purpleBtn")}></button>
                     </div>
                     <h1>Selected category: {category !== undefined ? category.toUpperCase() : ''}</h1>
                     <h1>Selected level: {level !== undefined ? level.toUpperCase() : ''}</h1>
