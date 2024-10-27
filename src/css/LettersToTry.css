@@ -40,12 +40,12 @@
 @media only screen and (max-width: 768px) {
     #elementsToReturn{
         height: 40vh;
-        margin-top: -35px;
+        margin-top: -50px;
     }
 
     .letters{
         font-size: 1.5vw;
-        height: 2rem;
+        height: 1.7rem;
     }    
 
     @media only screen and (orientation: landscape) {

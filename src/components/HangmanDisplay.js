@@ -17,12 +17,11 @@ function HangmanDisplay(props) {
     let rung4 = document.getElementById('rung4');
     let rung5 = document.getElementById('rung5');
     let rungs = document.getElementsByClassName('rung');
-    let ladderfoot;
+    let ladderfoot, ladderHeight;
 
     switch (word.length) {
         case 5:
             if (ladder !== null) {
-                ladder.style.height = '132px';
                 for (let i = 0; i < rungs.length; i++) {
                     rungs[i].style.width = '90px';
                 }
@@ -30,11 +29,11 @@ function HangmanDisplay(props) {
                 rung4.style.marginLeft = '5px';
                 rung5.style.marginLeft = '-5px';
             }
+            ladderHeight = '132px';
             ladderfoot = ladderMedium;
             break;
         case 6:
             if (ladder !== null) {
-                ladder.style.height = '175px';
                 for (let i = 0; i < rungs.length; i++) {
                     rungs[i].style.width = '115px';
                 }
@@ -43,9 +42,11 @@ function HangmanDisplay(props) {
                 rung4.style.marginLeft = '0px';
                 rung5.style.marginLeft = '-10px';
             }
+            ladderHeight = '175px';
             ladderfoot = ladderMedium;
             break;
         case 7:
+            ladderHeight = '220px';
             ladderfoot = ladderHard;
             break;
         default:
@@ -57,6 +58,7 @@ function HangmanDisplay(props) {
                 rung4.style.marginLeft = '10px';
                 rung5.style.marginLeft = '-10px';
             }
+            ladderHeight = '108px';
             ladderfoot = ladderEasy;
     }
 
@@ -87,13 +89,13 @@ function HangmanDisplay(props) {
         }
 
         if (goodGuess > 6) {
-            document.getElementById("rung1").style.opacity = "5";
+            document.getElementById("rung1").style.opacity = "1";
         }
 
     }, [goodGuess]);
 
     return (
-        <div id="ladder">
+        <div id="ladder" style={{height: ladderHeight}}>
             <div id="ladderFootDiv">
                 <img className="ladderfoot" id="ladderfootleft" alt="ladderfootleft" src={ladderfoot} title="ladderfootleft"></img>
                 <img className="ladderfoot" id="ladderfootright" alt="ladderfootright" src={ladderfoot} title="ladderfootright"></img>

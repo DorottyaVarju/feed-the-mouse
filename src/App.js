@@ -4,6 +4,7 @@ import WordToGuess from './components/WordToGuess.js';
 import PageNotFound from './components/PageNotFound.js';
 import FullscreenButton from './components/FullscreenButton';
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import ColorChange from './components/ColorChange.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         </Routes>
       </HashRouter>
       <FullscreenButton />
+      <ColorChange />
     </div>
   );
 }
