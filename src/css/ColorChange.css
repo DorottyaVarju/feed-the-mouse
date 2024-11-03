@@ -1,12 +1,12 @@
 #colorChange{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px;
-    height: 20px;
-    width: 120px;
+    top: 0;
+    padding: 20px;
+    width: 180px;
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
+    min-height: 700px;
 }
 
 #pinkBtn, #brownBtn, #blueBtn, #greenBtn, #purpleBtn{
@@ -20,7 +20,7 @@
     background-color: #844923ff;
 }
 
-#pinkBtn:hover{
+#pinkBtn,#pinkBtn:hover{
     background-color: #8c3747;
 }
 
@@ -41,5 +41,6 @@
         width: 100%;
         justify-content: space-evenly;
         padding: 0px 30%;
+        padding-bottom: 10px;
     }
 }

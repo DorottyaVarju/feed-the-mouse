@@ -4,7 +4,7 @@
     flex-direction: column;
     grid-column: 1 / 6;
     grid-row: 1 / 4;
-    min-height: 363px;
+    min-height: 402px;
 }
 
 ul {
@@ -91,7 +91,8 @@ button:hover {
     align-items: flex-end;
     width: 100%;
     justify-content: center;
-    min-height: 680px;
+    min-height: 700px;
+    padding-bottom: 20px;
 }
 
 div#selectedCatAndLevel > h1 {

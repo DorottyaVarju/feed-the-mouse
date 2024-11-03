@@ -18,34 +18,55 @@ function WordToGuess() {
         let options = document.getElementsByTagName('option');
     
         let color = bodyBgColor;
+        let btnColor;
+
+        switch (color) {
+            case 'rgb(83, 62, 8)':
+                btnColor = '#844923';
+                break;
+            case 'rgb(181, 72, 93)':
+                btnColor = '#8c3747';
+                break;
+            case 'rgb(24, 74, 135)':
+                btnColor = '#072ac8';
+                break;
+            case 'rgb(46, 120, 90)':
+                btnColor = '#1a5c3d';
+                break;
+            case 'rgb(83, 34, 140)':
+                btnColor = '#480ca8';
+                break;
+            default:
+                btnColor = '#844923';
+        }
     
         for (let i = 0; i < buttons.length; i++) {
             let isChildOfColorChangeDiv = document.getElementById('colorChange').contains(buttons[i]);
     
             if (!isChildOfColorChangeDiv) {
-                buttons[i].style.backgroundColor = color;
+                buttons[i].style.backgroundColor = btnColor;
                 buttons[i].addEventListener('mouseover', () => {
                     buttons[i].style.backgroundColor = '#fff88bff';
-                    buttons[i].style.color = color;
+                    buttons[i].style.color = btnColor;
                 });
     
                 buttons[i].addEventListener('mouseout', () => {
-                    buttons[i].style.backgroundColor = color;
+                    buttons[i].style.backgroundColor = btnColor;
                     buttons[i].style.color = '#fff88bff';
                 });
             }
         }
     
         for (let i = 0; i < selects.length; i++) {
-            selects[i].style.backgroundColor = color;
+            selects[i].style.backgroundColor = btnColor;
         }
     
         for (let i = 0; i < inputs.length; i++) {
-            inputs[i].style.backgroundColor = color;
+            inputs[i].style.backgroundColor = btnColor;
         }
     
         for (let i = 0; i < options.length; i++) {
-            options[i].style.backgroundColor = color;
+            options[i].style.backgroundColor = btnColor;
         }
     
     };
