@@ -5,7 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 function CategoryAndNumOfLettersToChoose() {
     
-    localStorage.clear();
+    let btnBckgroundClass = localStorage.getItem('btnBckgroundClass');
+    let bodyBckgroundClass = localStorage.getItem('bodyBckgroundClass');
+
+    document.body.classList.add(bodyBckgroundClass);
+
+    localStorage.removeItem('formData');
     
     const [inputs, setInputs] = useState({});
     const navigate = useNavigate();
@@ -39,32 +44,32 @@ function CategoryAndNumOfLettersToChoose() {
             <form onSubmit={handleSubmit}>
                 <label>Enter your name:</label>
                 <br></br>
-                <input type="text" name="name" id="name" autoFocus autoComplete="off" value={gamersName}
+                <input className={btnBckgroundClass} type="text" name="name" id="name" autoFocus autoComplete="off" value={gamersName}
           onChange={(e) => setGamersName(e.target.value)} />
                 <br></br>
                 <br></br>
                 <label>Select a category:</label>
                 <br></br>
-                <select name="category" value={inputs.category || ""} onChange={handleChange}>
-                    <option value="" disabled>Select a category</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="nature">Nature</option>
-                    <option value="society">Society</option>
-                    <option value="mixed">Mixed</option>
+                <select name="category" value={inputs.category || ""} className={btnBckgroundClass} onChange={handleChange}>
+                    <option className={btnBckgroundClass} value="" disabled>Select a category</option>
+                    <option className={btnBckgroundClass} value="entertainment">Entertainment</option>
+                    <option className={btnBckgroundClass} value="nature">Nature</option>
+                    <option className={btnBckgroundClass} value="society">Society</option>
+                    <option className={btnBckgroundClass} value="mixed">Mixed</option>
                 </select>
                 <br></br>
                 <br></br>
                 <label>Select a level:</label>
                 <br></br>
-                <select name="level" value={inputs.level || ""} onChange={handleChange}>
-                    <option value="" disabled>Select a level</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
+                <select className={btnBckgroundClass} name="level" value={inputs.level || ""} onChange={handleChange}>
+                    <option className={btnBckgroundClass} value="" disabled>Select a level</option>
+                    <option className={btnBckgroundClass} value="easy">Easy</option>
+                    <option className={btnBckgroundClass} value="medium">Medium</option>
+                    <option className={btnBckgroundClass} value="hard">Hard</option>
                 </select>
                 <br></br>
                 <br></br>
-                <button type="submit">Let's start!</button>
+                <button className={btnBckgroundClass} type="submit">Let's start!</button>
                 <p id="errorMsg"></p>
             </form>
         </>

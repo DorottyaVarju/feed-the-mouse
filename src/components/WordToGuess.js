@@ -11,67 +11,33 @@ import cheese from '../images/cheese.png';
 import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEasy, entertainmentAndMedium, entertainmentAndDifficult, societyAndEasy, societyAndMedium, societyAndDifficult, mixedAndEasy, mixedAndMedium, mixedAndDifficult, } from '../Words.js';
 
 function WordToGuess() {
-    const themeChange = (bodyBgColor) => {
-        let buttons = document.getElementsByTagName('button');
-        let selects = document.getElementsByTagName('select');
-        let inputs = document.getElementsByTagName('input');
-        let options = document.getElementsByTagName('option');
-    
-        let color = bodyBgColor;
-        let btnColor;
+    let btnBckgroundClass = localStorage.getItem('btnBckgroundClass');
 
-        switch (color) {
-            case 'rgb(83, 62, 8)':
-                btnColor = '#844923';
-                break;
-            case 'rgb(181, 72, 93)':
-                btnColor = '#8c3747';
-                break;
-            case 'rgb(24, 74, 135)':
-                btnColor = '#072ac8';
-                break;
-            case 'rgb(46, 120, 90)':
-                btnColor = '#1a5c3d';
-                break;
-            case 'rgb(83, 34, 140)':
-                btnColor = '#480ca8';
-                break;
-            default:
-                btnColor = '#844923';
-        }
-    
-        for (let i = 0; i < buttons.length; i++) {
-            let isChildOfColorChangeDiv = document.getElementById('colorChange').contains(buttons[i]);
-    
-            if (!isChildOfColorChangeDiv) {
-                buttons[i].style.backgroundColor = btnColor;
-                buttons[i].addEventListener('mouseover', () => {
-                    buttons[i].style.backgroundColor = '#fff88bff';
-                    buttons[i].style.color = btnColor;
-                });
-    
-                buttons[i].addEventListener('mouseout', () => {
-                    buttons[i].style.backgroundColor = btnColor;
-                    buttons[i].style.color = '#fff88bff';
-                });
-            }
-        }
-    
-        for (let i = 0; i < selects.length; i++) {
-            selects[i].style.backgroundColor = btnColor;
-        }
-    
-        for (let i = 0; i < inputs.length; i++) {
-            inputs[i].style.backgroundColor = btnColor;
-        }
-    
-        for (let i = 0; i < options.length; i++) {
-            options[i].style.backgroundColor = btnColor;
-        }
-    
-    };
+    let buttons = document.getElementsByTagName('button');
+    let selects = document.getElementsByTagName('select');
+    let inputs = document.getElementsByTagName('input');
+    let options = document.getElementsByTagName('option');
 
-    themeChange(window.getComputedStyle(document.body).backgroundColor);
+    
+    for (let i = 0; i < buttons.length; i++) {
+        let isChildOfColorChangeDiv = document.getElementById('colorChange').contains(buttons[i]);
+
+        if (!isChildOfColorChangeDiv) {
+                buttons[i].classList.add(btnBckgroundClass);
+        }
+    }
+    
+    for (let i = 0; i < selects.length; i++) {
+        selects[i].classList.add(btnBckgroundClass);
+    }
+    
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].classList.add(btnBckgroundClass);
+    }
+    
+    for (let i = 0; i < options.length; i++) {
+        options[i].classList.add(btnBckgroundClass);
+    }
 
     const backToMainPage = () => {
         window.location.href = '/feed-the-mouse/';
@@ -200,11 +166,6 @@ function WordToGuess() {
     return (
         <>
             <div id="gameDiv">
-                <div id="selectedCatAndLevel">
-                    <h1>{gamerName !== '' ? 'Hi, '+gamerName+'!' : ''}</h1>
-                    <h1>Selected category: {category !== undefined ? category.toUpperCase() : ''}</h1>
-                    <h1>Selected level: {level !== undefined ? level.toUpperCase() : ''}</h1>
-                </div>  
                 <ul>
                     {linesForWordToGuess}
                     <li className="letterAndLineContainer">
@@ -229,6 +190,10 @@ function WordToGuess() {
                 </div>
             </div>
             <LettersToTry word={word} goodGuess={goodGuess} onGoodLetter={handleGoodLetter}></LettersToTry>
+            <h1 id="gamerName">{gamerName !== '' ? 'Hi, '+gamerName+'!' : ''}</h1>
+            <div id="selectedCatAndLevel">
+                <h1>Selected category: {category !== undefined ? category.toUpperCase() : ''} &nbsp;&nbsp; Selected level: {level !== undefined ? level.toUpperCase() : ''}</h1>
+            </div>  
         </>
     )
 

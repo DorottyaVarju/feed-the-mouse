@@ -1,13 +1,14 @@
 #colorChange{
     position: absolute;
-    top: 0;
+    bottom: 0;
     padding: 20px;
-    width: 180px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    min-height: 700px;
-    z-index: -1;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+div#colorChange > button{
+    margin-right: 10px;
 }
 
 #pinkBtn, #brownBtn, #blueBtn, #greenBtn, #purpleBtn{
@@ -17,31 +18,49 @@
     height: 20px;
 }
 
-#brownBtn, #brownBtn:hover{
+#brownBtn, #brownBtn:hover, .brownBtnBckground{
     background-color: #844923ff;
 }
 
-#pinkBtn,#pinkBtn:hover{
+.brownBodyBckground{
+    background-color: #533e08d7;
+}
+
+#pinkBtn,#pinkBtn:hover, .pinkBtnBckground{
     background-color: #8c3747;
 }
 
-#blueBtn, #blueBtn:hover{
+.pinkBodyBckground{
+    background-color: #b5485d;
+}
+
+#blueBtn, #blueBtn:hover, .blueBtnBckground{
     background-color: #072ac8;
 }
 
-#greenBtn, #greenBtn:hover{
+.blueBodyBckground{
+    background-color: #184a87;
+}
+
+#greenBtn, #greenBtn:hover, .greenBtnBckground{
     background-color: #1a5c3d;
 }
 
-#purpleBtn, #purpleBtn:hover{
+.greenBodyBckground{
+    background-color: #2e785a;
+}
+
+#purpleBtn, #purpleBtn:hover, .purpleBtnBckground{
     background-color: #480ca8;
 }
 
-@media only screen and (max-width: 768px) {
+.purpleBodyBckground{
+    background-color: #53228c;
+}
+
+@media only screen and (max-width: 800px) {
     #colorChange{
         width: 100%;
-        justify-content: space-evenly;
-        padding: 0px 30%;
-        padding-bottom: 10px;
+        margin-bottom: 20px;
     }
 }
