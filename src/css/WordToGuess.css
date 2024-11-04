@@ -109,7 +109,7 @@ div#selectedCatAndLevel > h1 {
 
 @media only screen and (max-width: 800px) {
     #gameDiv {
-        height: 60vh;
+        height: 55vh;
     }
 
     #buttonDiv {

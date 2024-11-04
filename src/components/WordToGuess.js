@@ -12,6 +12,8 @@ import { natureAndEasy, natureAndMedium, natureAndDifficult, entertainmentAndEas
 
 function WordToGuess() {
     let btnBckgroundClass = localStorage.getItem('btnBckgroundClass');
+    let bodyBckgroundClass = localStorage.getItem('bodyBckgroundClass');
+    document.body.classList.add(bodyBckgroundClass);
 
     let buttons = document.getElementsByTagName('button');
     let selects = document.getElementsByTagName('select');
